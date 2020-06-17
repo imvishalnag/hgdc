@@ -1178,10 +1178,14 @@
     display: inline-block;
   }
   .error-page .input-group .btn {
-    border-radius: 50px;
+    border-radius: 50px;    
+    background-color: #243529;
+    border: 1px solid #243529;
+    color: #fff;
   }
   .error-page .input-group .btn:hover {
-    background-color: transparent;
+    background-color: #fff;
+    color: #243529;
   }
   .error-page .input-group .btn img {
     width: 21px;
@@ -1199,9 +1203,13 @@
     border-radius: 40px;
   }
   .error-page .subscribe-form {
-    max-width: 560px;
-    width: 560px;
+    max-width: 600px;
+    width: 600px;
     display: inline-block;
+    border: 3px solid #333333;
+    border-radius: 3px;
+    padding: 30px 10px;
+    box-shadow: 0 0 12px 0px #2435299c;
   }
   .blog-post.style-2 {
     background-color: #fff;

@@ -66,6 +66,16 @@ Route::get('/contact', function () {
     return view('web.contact');
 })->name('web.contact');
 
+// =========== Login ============= 
+Route::get('/Login', function () {
+    return view('web.login');
+})->name('web.login');
+
+// =========== Thanks ============= 
+Route::get('/Thank-You', function () {
+    return view('web.thanks');
+})->name('web.thanks');
+
 // =========== Online Admission ============= 
 Route::get('/Online-Admission', function () {
     return view('web.admission');
