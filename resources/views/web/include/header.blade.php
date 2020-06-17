@@ -8,7 +8,6 @@
 	<meta name="author" content="" />
 	<meta name="robots" content="" />
 	<meta property="og:title" content="Hari-Gayatri Das College">
-	<meta property="og:description" content="Hari-Gayatri Das College">
 	<meta property="og:image" content="{{asset('web/images/logo-black.png')}}">
 	<meta name="format-detection" content="telephone=no">
 	
@@ -36,7 +35,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('web/css/style.min.css')}}">
 	<link class="skin" rel="stylesheet" type="text/css" href="{{asset('web/css/skin/skin-1.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('web/css/templete.min.css')}}">
-	
+	@yield('seo')
 	<style>
 	@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap');
 	</style>
