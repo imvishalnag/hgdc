@@ -12,10 +12,22 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string
      */
-    protected function redirectTo($request)
+    protected function redirectTo($request, $guard = null)
     {
         if (! $request->expectsJson()) {
-            return route('login');
+            if (Auth::guard($guard)->check()) {
+                switch ($guard) {
+                   case 'admin':
+                       $route = 'admin/dashboard';
+                       break;
+                   case 'employee':
+                       $route = 'employee/dashboard';
+                       break;
+                  default:
+                       $route = 'web.userLoginForm';
+               }
+               return redirect($route);
+           }
         }
     }
 }
