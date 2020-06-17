@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+img.emblem {
+    position: absolute;
+    width: 70%;
+    left: 14%;
+    opacity: 0.2;
+    top: 29%;
+}
+.home-into p {
+    color: #243529;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+.about-box .ext {
+    text-align: justify;
+}
+.princ {
+    float: right;
+    width: 20%;
+    border: 5px solid #243529;
+    margin-left: 15px;
+    border-radius: 10px;
+}
+.princ-name h5 {
+    font-size: 22px;
+    font-family: Poppins;
+    color: #4582ff;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.active.spl a {
+    color: rgba(255,255,255,.2)!important;
+    background-image: url('https://t1.pixers.pics/img-1fb6f67c/posters-linear-gradient-colour-background.jpg?H4sIAAAAAAAAA3VOSW6EMBD8jpGAbq9gHjDXeQIyXiYkLJbtSUZ5fYyiHKM-dHW1aoHnkU3wYP1RfIJ9dW7zENatXnlKPq_fnkjJW2ymym4EsaLz0yebzki6-ukoo63CoZVcN9OXqcrdpA_yVkrME0DmfVxf1a4um8HuGRjSAXAEqUdjnWWDoZzNcetyMYczyXUKXwL7eDxavKb5qyIQW3FVKGndSe101rBC3uOjgX8CfzFUFdzuwDhQBShAX8x8uzNOFQo9I1_C4rn0TqFnwY1BacsHzZZFB-mGvmb8AHyWilQuAQAA')!important;
+    background-size: 270px!important;
+    background-repeat: repeat-x!important;
+    -webkit-background-clip: text!important;
+    animation: animate 15s linear infinite;
+  }
+  
+@keyframes animate {
+    0% {
+        background-position: left 0px top 0px;
+    }
+    40% {
+        background-position: left 800px top 0px;
+    }
+}
+.about .media1 {
+    border: 3px solid #243529;
+    border-radius: 50px;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+.about .media1 img {
+    padding: 10px;
+    border-radius: 50px;
+    max-width: 350px;
+}
+.fee > thead > tr > td {
+    background: #243529;
+    color: #fff;
+    border: 1px solid #ffa63d;
+    text-align: center;
+}
+.fee > tbody > tr > td {
+    background: #dcdcdc;
+    color: #243529;
+    border: 1px solid #ffa63d;
+    text-align: center;
+    vertical-align: middle;
+}
+.add-form {
+    border:3px solid #333333;
+    border-radius:3px;
+    padding: 10px;
+    box-shadow: 0 0 12px 0px #2435299c;
+}
+
+
+/* Media Quires */
+@media (max-width:768px){
+    .CKRD{
+        display: block;
+    }
+    .col-xs-6 {
+        width: 50%;
+    }
+}
+@media (min-width:768px){
+    .dedptd .col-md-2:nth-child(odd){
+        padding-right: 7.5px;
+    }
+    .dedptd .col-md-2:nth-child(even){
+        padding-left: 7.5px;
+    }
+}
