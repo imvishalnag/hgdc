@@ -1,44 +1,78 @@
-	@extends('web.templet.master')
+<!DOCTYPE html>
+<html lang="en">
 
-	{{-- @include('web.include.seo') --}}
-
-	@section('seo')
-		<meta name="description" content="Hari-Gayatri Das College">
-		<style>input[type="radio"], input[type="checkbox"]{opacity: 1;height:15px;margin-right: 7px;position: relative;}input, textarea, select, .bootstrap-select .btn {border-color: #999!important;color: #495057;font-weight: 500;}h6 {font-weight: 500;text-decoration: underline;}</style>		
-	@endsection
-
-	@section('content')
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+	<meta property="og:title" content="Hari-Gayatri Das College">
+	<meta property="og:image" content="{{asset('web/images/logo-black.png')}}">
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- FAVICONS ICON -->
+	<link rel="icon" href="{{asset('web/images/emblem.png')}}" type="image/x-icon">
+	<link rel="shortcut icon" type="image/x-icon" href="{{asset('web/images/emblem.png')}}">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>Hari-Gayatri Das College</title>
+	
+	<!-- MOBILE SPECIFIC -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	
+	<!-- STYLESHEETS -->
+	<link rel="stylesheet" type="text/css" href="{{asset('web/css/plugins.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('web/plugins/fontawesome/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('web/plugins/line-awesome/css/line-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('web/plugins/flaticon/flaticon.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('web/plugins/themify/themify-icons.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('web/css/style.min.css')}}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{{asset('web/css/skin/skin-1.min.css')}}">
+	
+	<meta name="description" content="Hari-Gayatri Das College">
+	<style>input[type="radio"], input[type="checkbox"]{opacity: 1;height:15px;margin-right: 7px;position: relative;}input, textarea, select, .bootstrap-select .btn {border-color: #999!important;color: #495057;font-weight: 500;}h6 {font-weight: 500;text-decoration: underline;}p {margin-bottom: 0}h1{font-size: 47px;margin-bottom:0}.form-group {margin-bottom: 10px}label, th {font-weight: 700} .table td, .table th{padding: 1px 10px!important}</style>
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap');
+	</style>
+	
+</head>
+<body id="bg">
+	<div class="page-wraper">
 		<!-- Content -->
 		<div class="page-content">
 			<!-- inner page banner -->
-			<div class="dlab-bnr-inr overlay-black-dark" style="background-image:url(images/banner/bnr1.jpg);">
-				<div class="container">
-					<div class="dlab-bnr-inr-entry">
-						<h1 class="text-white">Admission</h1>
-						<!-- Breadcrumb row -->
-						<div class="breadcrumb-row">
-							<ul class="list-inline">
-								<li><a href="index-2.html"><i class="fa fa-home"></i></a></li>
-								<li>Admission</li>
-							</ul>
-						</div>
-						<!-- Breadcrumb row END -->
-					</div>
-				</div>
-			</div>
-			<!-- inner page banner END -->
 			<div class="content-block">
 				<!-- blog grid -->
-				<div class="section-full content-inner bg-gray mb-3">
+				<div class="section-full content-inner bg-gray pt-2  pb-2">
 					<div class="container">
 						<!-- Grid 1 -->
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12 col-12 student-bx about">
 								<!-- Vision & Mission -->
-								<div class="section-head text-center">
-									<h2 class="title">Online  Admission</h2>
-									<p>Three Year Degree Course (Arts) Admission Form</p>
-									<div class="dlab-separator bg-orange"></div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6 mb-2">
+										<p class="text-left"><strong>Submit Date :</strong> 17/06/2020 </p>
+									</div>
+									<div class="col-md-6 col-sm-6 mb-2">
+										<p class="text-right"><strong>Print Date :</strong> 17/06/2020 </p>
+									</div>
+									<div class="col-md-1 col-sm-1"></div>
+									<div class="col-md-2 col-sm-2">
+										<img src="{{asset('web/images/emblem.png')}}">
+									</div>
+									<div class="col-md-8 col-sm-8 mt-4 mb-2">
+										<h1 class="mb-1">হৰি-গায়ত্ৰী দাস মহাবিদ্যালয়</h1>
+										<h1 class="mb-2">Hari-Gayatri DAS COLLEGE</h1>
+										<p class="text-center">আজাৰা, গুৱাহাটী-১৭, কামৰূপ (অসম)</p>
+										<p class="text-center">Azara, Guwahati-17, Kamrup (Aassam)</p>
+										<p class="text-center">স্থাপিত - ইং ১৯৯৬ চন, Estd : 1996</p>
+									</div>
 								</div>
 								<div class="add-form">
 									<form method="post" class="dzForm col-md-12" action="#">
@@ -46,89 +80,86 @@
 										<div class="row">
 											<div class="form-row col-md-12">
 												<div class="col-md-12 col-sm-12">
+													<h4 class="text-center" style="text-decoration: underline"> Three Year Degree Course (Arts) Admission Form</h4>
 													<h5> Applicant basic information </h5>
 												</div>
-												<div class="col-md-4 col-sm-4">
-													<div class="form-group">
-														<label for="name">1. Name in Full </label>
-														<input name="name" type="text" required="" class="form-control">
+												<div class="form-row col-md-10">
+													<div class="col-md-5 col-sm-5">
+														<div class="form-group">
+															<label for="name"> Applicant Name </label>
+															<p>Jayantika Goswami</p>
+														</div>
+													</div>
+													<div class="col-md-2 col-sm-2">
+														<div class="form-group">
+															<label for="dob"> Date of Birth </label>
+															<p>11/02/1994</p>
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-3">
+														<div class="form-group">
+															<label for="phone"> Phone Number </label>
+															<p>+91 9465098215</p>
+														</div>
+													</div>
+													<div class="col-md-2 col-sm-2">
+														<div class="form-group">
+															<label for="gender"> Gender</label>
+															<p>Female</p>
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-3">
+														<div class="form-group">
+															<label for="f-name"> Father's Name </label>
+															<p>Shyam Goswami</p>
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-3">
+														<div class="form-group">
+															<label for="f-occoupation"> Father's Occoupation </label>
+															<p>Service</p>
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-3">
+														<div class="form-group">
+															<label for="m-name"> Mother's Name </label>															<p>Rita Goswami</p>
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-3">
+														<div class="form-group">
+															<label for="m-occoupation"> Mother's Occoupation </label>
+															<p>Housewife</p>
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-3">
+														<div class="form-group">
+															<label for="nationality"> Nationality </label>
+															<p>Indian</p>
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-3">
+														<div class="form-group">
+															<label for="religion"> Religion </label>
+															<p>Hindu</p>
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-3">
+														<div class="form-group">
+															<label for="material"> Material Status</label>
+															<p>Unmarried</p>
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-3">
+														<div class="form-group">
+															<label for="caste"> Caste</label>
+															<p>General</p>
+														</div>
 													</div>
 												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="dob">2. Date of Birth </label>
-														<input name="dob" type="date" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="phone">3. Phone Number </label>
-														<input name="phone" type="text" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-2 col-sm-2">
-													<div class="form-group">
-														<label for="gender">4. Gender</label>
-														<select name="gender">
-															<option value="Male">Male</option>
-															<option value="Female">Female</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="f-name">5.a. Father's Name </label>
-														<input name="f-name" type="text" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="f-occoupation">5.b. Father's Occoupation </label>
-														<input name="f-occoupation" type="text" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="m-name">6.a. Mother's Name </label>
-														<input name="m-name" type="text" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="m-occoupation">6.b. Mother's Occoupation </label>
-														<input name="m-occoupation" type="text" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="nationality">7. Nationality </label>
-														<input name="nationality" type="text" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="religion">8. Religion </label>
-														<input name="religion" type="text" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="material">9. Material Status</label>
-														<select name="material">
-															<option value="Married">Married</option>
-															<option value="Unmarried">Unmarried</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-md-3 col-sm-3">
-													<div class="form-group">
-														<label for="caste">10. Caste</label>
-														<select name="caste">
-															<option value="SC">SC</option>
-															<option value="ST">ST</option>
-															<option value="OBC">OBC</option>
-															<option value="MOBC">MOBC</option>
-														</select>
+												<div class="form-row col-md-2">
+													<div>
+														<img src="web/images/test.jpg" alt="">
+														<img class="pt-1" src="web/images/sign.png" alt="">
 													</div>
 												</div>
 											</div>
@@ -139,28 +170,28 @@
 												</div>
 												<div class="col-md-6 col-sm-6">
 													<div class="form-group">
-														<label for="name">11.a. Permanent Address </label>
-														<textarea name="dzMessage" style="height:120px" class="form-control" required="" placeholder="Your message here"></textarea>
+														<label for="name"> Permanent Address </label>
+														<p>56/1, Rose Valley, Downtown street, Kolkata, WestBengal</p>
 													</div>
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group m-0">
-														<label for="name">11.b. Village/Town</label>
-														<input name="m-name" type="text" required="" class="form-control">
+														<label for="name"> Village/Town</label>
+														<p>Kolkata</p>
 													</div>
 													<div class="form-group">
 														<label for="name">11.c. P.O.</label>
-														<input name="m-name" type="text" required="" class="form-control">
+														<p>Uttar chabishpargona</p>
 													</div>
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group m-0">
-														<label for="name">11.d. District</label>
-														<input name="m-name" type="text" required="" class="form-control">
+														<label for="name"> District</label>
+														<p>Hoogly</p>
 													</div>
 													<div class="form-group">
-														<label for="name">11.e. Pincode.</label>
-														<input name="m-name" type="text" required="" class="form-control">
+														<label for="name"> Pincode.</label>
+														<p>720013</p>
 													</div>
 												</div>
 											</div>
@@ -168,28 +199,28 @@
 												<div class="col-md-12 col-sm-12">
 													<hr>
 													<h5>If you have a legal guardian </h5>
-													<div class="form-group">
-														<span class="CKRD"><input name="l-guardian" type="radio" value="l-gurdian-yes">Yes</span>
-														<span class="CKRD"><input name="l-guardian" type="radio" checked value="l-gurdian-no">No</span>
+													<div class="form-group mb-0">
+														<span class="CKRD"><input name="l-guardian" type="radio" checked value="l-gurdian-yes">Yes</span>
+														<span class="CKRD"><input name="l-guardian" type="radio" value="l-gurdian-no">No</span>
 													</div>
 												</div>
-												<div class="form-row col-md-12" id="l-gurdian-div" style="display:none">
-													<div class="col-md-4 col-sm-4">
+												<div class="form-row col-md-12" style="display:">
+													<div class="col-md-4 col-sm-4 mb-0">
 														<div class="form-group">
-															<label for="name">12.a. Legal Guardian's Name </label>
-															<input name="l-name" type="text" required="" class="form-control">
+															<label for="name">Legal Guardian's Name </label>
+															<p>Babai nath</p>
 														</div>
 													</div>
-													<div class="col-md-4 col-sm-4">
+													<div class="col-md-4 col-sm-4 mb-0">
 														<div class="form-group">
-															<label for="name">12.b. Legal Guardian's Relationship </label>
-															<input name="l-relation" type="text" required="" class="form-control">
+															<label for="name"> Legal Guardian's Relationship </label>
+															<p>Friend</p>
 														</div>
 													</div>
-													<div class="col-md-4 col-sm-4">
+													<div class="col-md-4 col-sm-4 mb-0">
 														<div class="form-group">
-															<label for="name">12.b. Legal Guardian's Pincode</label>
-															<input name="l-pincode" type="text" required="" class="form-control">
+															<label for="name"> Legal Guardian's Pincode</label>
+															<p>781246</p>
 														</div>
 													</div>
 												</div>
@@ -200,199 +231,112 @@
 													<h5> Applicant Education Data</h5>
 													<h6 class="mb-0">H.S.L.C</h6>
 												</div>
-												<div class="col-md-3 col-sm-3">
+												<div class="col-md-3 col-sm-3 mb-0">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.a. Nane of Board/University </label>
-														<input name="hslc-board" type="text" required="" class="form-control">
+														<label for="hslc-div"> Nane of Board/University </label>
+														<p>West Bengal Education Board</p>
 													</div>
 												</div>
-												<div class="col-md-2 col-sm-2">
+												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.b. Year of Passing </label>
-														<input name="hslc-yr" type="text" required="" class="form-control">
+														<label for="hslc-div"> Year of Passing </label>
+														<p>2015</p>
 													</div>
 												</div>
-												<div class="col-md-2 col-sm-2">
+												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.c. Exam Roll No.</label>
-														<input name="hslc-roll" type="text" required="" class="form-control">
+														<label for="hslc-div"> Exam Roll No.</label>
+														<p>S15041194</p>
 													</div>
 												</div>
-												<div class="col-md-2 col-sm-2">
+												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.d. Division </label>
-														<input name="hslc-div" type="text" required="" class="form-control">
+														<label for="hslc-div"> Division </label>
+														<p>1st</p>
 													</div>
 												</div>
-												<div class="col-md-3 col-sm-3">
+												<div class="col-md-3 col-sm-3 mb-0">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.e. Name of School/College</label>
-														<input name="hslc-school" type="text" required="" class="form-control">
+														<label for="hslc-div"> Name of School/College</label>
+														<p>St. Mary School</p>
 													</div>
 												</div>
-												<div class="col-md-12 col-sm-12">
+												<div class="col-md-12 col-sm-12 mb-0">
 													<h6 class="mb-0">H.S.</h6>
 												</div>
-												<div class="col-md-3 col-sm-3">
+												<div class="col-md-3 col-sm-3 mb-0">
 													<div class="form-group">
-														<label for="hs-div">14.a. Nane of Board/University </label>
-														<input name="hs-div" type="text" required="" class="form-control">
+														<label for="hs-div"> Nane of Board/University </label>
+														<p>West Bengal Higher Secondary Education Board</p>
 													</div>
 												</div>
-												<div class="col-md-2 col-sm-2">
+												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group">
-														<label for="hs-div">14.b. Year of Passing </label>
-														<input name="hs-div" type="text" required="" class="form-control">
+														<label for="hs-div"> Year of Passing </label>
+														<p>2017</p>
 													</div>
 												</div>
-												<div class="col-md-2 col-sm-2">
+												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group">
-														<label for="hs-div">14.c. Exam Roll No.</label>
-														<input name="hs-div" type="text" required="" class="form-control">
+														<label for="hs-div"> Exam Roll No.</label>
+														<p>AH17450094</p>
 													</div>
 												</div>
-												<div class="col-md-2 col-sm-2">
+												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group">
-														<label for="hs-div">14.d. Division </label>
-														<input name="hs-div" type="text" required="" class="form-control">
+														<label for="hs-div"> Division </label>
+														<p>1st</p>
 													</div>
 												</div>
-												<div class="col-md-3 col-sm-3">
+												<div class="col-md-3 col-sm-3 mb-0">
 													<div class="form-group">
-														<label for="hs-div">14.e. Name of School/College</label>
-														<input name="hs-div" type="text" required="" class="form-control">
+														<label for="hs-div"> Name of School/College</label>
+														<p>St. Mary School</p>
 													</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
-													<h6 class="mb-0">H.S. Detail</h6>
-												</div>
-												<div class="form-row col-md-12">
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group mb-2">
-															<label for="hs-sub1-name">15.a. Subject1 Name</label>
-															<input name="hs-sub1-name" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub1-fmark">15.b. Full Mark </label>
-															<input name="hs-sub1-fmark" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub1-mark">15.c. Mark Scrored</label>
-															<input name="hs-sub1-mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-												</div>
-												<div class="form-row col-md-12">
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group mb-2">
-															<label for="hs-sub2-name">16.a. Subject2 Name</label>
-															<input name="hs-sub2-name" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub2-fmark">16.b. Full Mark </label>
-															<input name="hs-sub2-fmark" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub2--mark">16.c. Mark Scrored</label>
-															<input name="hs-sub2-mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-												</div>
-												<div class="form-row col-md-12">
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group mb-2">
-															<label for="hs-sub3-name">17.a. Subject3 Name</label>
-															<input name="hs-sub2-name" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub3-fmark">17.b. Full Mark </label>
-															<input name="hs-sub2-fmark" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub3-mark">17.c. Mark Scrored</label>
-															<input name="hs-sub2-mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-												</div>
-												<div class="form-row col-md-12">
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group mb-2">
-															<label for="hs-sub4-name">18.a. Subject4 Name</label>
-															<input name="hs-sub4-name" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub4-fmark">18.b. Full Mark </label>
-															<input name="hs-sub4-fmark" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub4--mark">18.c. Mark Scrored</label>
-															<input name="hs-sub4-mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-												</div>
-												<div class="form-row col-md-12">
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group mb-2">
-															<label for="hs-sub5-mark">19.a. Subject5 Name</label>
-															<input name="hs-sub5-mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub5--mark">19.b. Full Mark </label>
-															<input name="hs-sub5--mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub5-mark">19.c. Mark Scrored</label>
-															<input name="hs-sub5-mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-												</div>
-												<div class="form-row col-md-12">
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group mb-2">
-															<label for="hs-sub6-mark">20.a. Subject6 Name</label>
-															<input name="hs-sub6-mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub6--mark">20.b. Full Mark </label>
-															<input name="hs-sub6--mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub6-mark">20.c. Mark Scrored</label>
-															<input name="hs-sub6-mark" type="text" required="" class="form-control">
-														</div>
-													</div>
-												</div>
-												<div class="form-row col-md-12">
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group mb-2">
-															<label for="t-mark">21. Total Marks Obtain</label>
-															<input name="t-mark" type="text" required="" class="form-control">
-														</div>
-													</div>
+                                                    <h6 class="mb-2">H.S. Detail</h6>
+                                                    <table class="table table-bordered text-center">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Subject</th>
+                                                                <th>Full Marks</th>
+                                                                <th>Marks Scored</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Subject1</td>
+                                                                <td>100</td>
+                                                                <td>80</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Subject2</td>
+                                                                <td>100</td>
+                                                                <td>80</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Subject3</td>
+                                                                <td>100</td>
+                                                                <td>80</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Subject4</td>
+                                                                <td>100</td>
+                                                                <td>80</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Subject5</td>
+                                                                <td>100</td>
+                                                                <td>80</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Subject6</td>
+                                                                <td>100</td>
+                                                                <td>80</td>
+                                                            </tr>
+                                                        </tbody>
+													</table>
 												</div>
 											</div>
 											<div class="form-row col-md-12">
@@ -401,99 +345,42 @@
 													<h5> Subject selection </h5>
 													<h6>In which course your are seeking admission for</h6>
 													<div class="form-group">
-														<span class="CKRD"><input name="course-type" type="radio" value="h-course">Honours Course &nbsp;</span>
-														<span class="CKRD"><input name="course-type" type="radio" value="r-course">Regular Course &nbsp;</span>
+														<p>Honours Course</p>
 													</div>
 												</div>
-												<div class="form-row col-md-12" id="h-course" style="display:none">
+												<div class="form-row col-md-12" id="h-course" style="">
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
-															<label for="name">22.a. Honours Subject <br><br></label>
-															<select>
-																<option value="Assamese">Assamese</option>
-																<option value="Political Science">Political Science</option>
-																<option value="Pholisophy">Pholisophy</option>
-																<option value="Education">Education</option>
-															</select>
+															<label for="name"> Honours Subject</label>
+															<p>Education</p>
 														</div>
 													</div>
-													<div class="col-md-3 col-sm-3">
+													<div class="col-md-5 col-sm-5">
 														<div class="form-group">
-															<label for="name">22.b. Honours Generic Subject (other than honours subject)</label>
-															<select>
-																<option value="Education">Education</option>
-																<option value="ASL">Econonics/Elective Assamese (ASL)</option>
-																<option value="Pholisophy">Pholisophy</option>
-																<option value="Political Science">Political Science</option>
-																<option value="Political Science">Computer Science</option>
-																<option value="Education">Mathematics</option>
-															</select>
+															<label for="name"> Honours Generic Subject (other than honours subject)</label>
+															<p>Economics</p>
 														</div>
 													</div>
-													<div class="col-md-12 col-sm-12">
+													<div class="col-md-4 col-sm-4">
 														<div class="form-group">
-															<label for="name">22.c. Compulsory Subject</label>													
-															<div class="form-group">
-																<span class="CKRD"><input name="h-comp-sub" type="checkbox" checked disabled>Enviromental Studies &nbsp;</span>
-																<span class="CKRD"><input class="h-comp-sub-s" name="h-comp-sub" type="checkbox">English Communication  or, &nbsp;</span>
-																<span class="CKRD"><input class="h-comp-sub-s" name="h-comp-sub" type="checkbox">MIL (Assamese/Hindi) Communication &nbsp;</span>
-															</div>
+															<label for="name"> Compulsory Subject</label>
+															<p>Enviromental Studies & Assamese</p>
 														</div>
 													</div>
 												</div>
-												<div class="form-row col-md-12" id="r-course" style="display:none">
-													<div class="col-md-12 col-sm-12">
+												<div class="form-row col-md-12" id="r-course" style="">
+													<div class="col-md-6 col-sm-6">
 														<div class="form-group">
-															<label for="name">22.a. Elective Subject <b style="color:red; font-weight:500;">(Any Two)</b></label>											
-															<div class="form-group">
-																<span class="CKRD"><input class="r-ele-sub" name="r-ele-sub" type="checkbox">Education &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="r-ele-sub" type="checkbox">Econonics/Elective Assamese (ASL) &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="r-ele-sub" type="checkbox">Pholisophy &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="r-ele-sub" type="checkbox">Political Science &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="r-ele-sub" type="checkbox">Computer Science &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="r-ele-sub" type="checkbox">Mathematics &nbsp;</span>
-															</div>
+															<label for="name"> Elective Subject <b style="color:red; font-weight:500;">(Any Two)</b></label>	
+															<p>Economics & Computer Science</p>
 														</div>
 													</div>
-													<div class="col-md-12 col-sm-12">
+													<div class="col-md-6 col-sm-6">
 														<div class="form-group">
-															<label for="name">22.b. Compulsory Subject</label>											
-															<div class="form-group">
-																<span class="CKRD"><input name="comp-sub" type="checkbox" checked disabled>English &nbsp;</span>
-																<span class="CKRD"><input name="comp-sub" type="checkbox" checked disabled>Enviromental Studies &nbsp;</span>
-																<span class="CKRD"><input class="r-comp-sub-s" name="comp-sub" type="checkbox">English Communication &nbsp;</span>
-																<span class="CKRD"><input class="r-comp-sub-s" name="comp-sub" type="checkbox">MIL (Assamese/Hindi) Communication &nbsp;</span>
-															</div>
+															<label for="name"> Compulsory Subject</label>		
+															<p>Enviromental Studies & Assamese</p>
 														</div>
 													</div>
-												</div>
-											</div>
-											<div class="form-row col-md-12">
-												<div class="col-md-12 col-sm-12">
-													<hr>
-													<h5>Upload required documents</h5>
-												</div>
-												<div class="col-md-6 col-sm-6">
-													<div class="form-group">
-														<label for="name">23. Signature of applicant<b style="color:red; font-weight:500;">(less than 1MB)</b> </label>
-														<input name="Sign" type="file" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-6 col-sm-6">
-													<div class="form-group">
-														<label for="name">23. Photo of applicant<b style="color:red; font-weight:500;">(less than 1MB)</b> </label>
-														<input name="photo" type="file" required="" class="form-control">
-													</div>
-												</div>
-												<div class="col-md-12 col-sm-12">
-													<div class="form-group">
-														<input name="delecration" type="checkbox" required >I hereby declare that i shall abide by the rules and regulations of the College and also all the above information provided by me are true and in best of my knowledge
-													</div>
-												</div>
-											</div>
-											<div class="form-row col-md-12">
-												<div class="col-md-12 col-sm-12 mt-3 mb-2">
-													<button name="submit" type="submit" value="Submit" class="btn radius-xl btn-lg">Submit Form<span></span></button>
 												</div>
 											</div>
 										</div>
@@ -508,37 +395,8 @@
 			<!-- contact area END -->
 		</div>
 		<!-- Content END-->
-	@endsection
+	</div>
 	
-	@section('script') 
-		<script>
-			// for Course Selection
-			$("input[name='course-type']").click(function () {
-				$('#h-course').css('display', ($(this).val() === 'h-course') ? 'inline-flex':'none');
-				$('#r-course').css('display', ($(this).val() === 'r-course') ? 'inline-flex':'none');
-			});
-			
-			// For Legal Gurdian
-			$("input[name='l-guardian']").click(function () {
-				$('#l-gurdian-div').css('display', ($(this).val() === 'l-gurdian-yes') ? 'inline-flex':'none');
-			});
-			
-			// For Honours Course Compulsary Subject selection
-			$(".h-comp-sub-s").change(function(){                                     		
-				$(".h-comp-sub-s").prop('checked',false);    
-				$(this).prop('checked',true);
-			});
-			
-			$("input.r-ele-sub:checkbox").click(function() {
-				var bol = $("input.r-ele-sub:checkbox:checked").length >= 2;     
-				$("input.r-ele-sub:checkbox").not(":checked").attr("disabled",bol);
-			});
+</body>
 
-
-			// For Regular Course Compulsary Subject selection
-			$(".r-comp-sub-s").change(function(){                                     		
-				$(".r-comp-sub-s").prop('checked',false);    
-				$(this).prop('checked',true);
-			});
-		</script>
-	@endsection
+</html>

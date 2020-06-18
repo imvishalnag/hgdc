@@ -81,3 +81,8 @@ Route::get('/Online-Admission', function () {
     return view('web.admission');
 })->name('web.admission');
 
+// =========== View-form ============= 
+Route::get('/View-form', function () {
+    return view('web.view-form');
+})->name('web.view-form');
+
