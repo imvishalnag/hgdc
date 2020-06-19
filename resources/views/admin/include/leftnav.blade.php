@@ -27,9 +27,9 @@
           <ul class="nav side-menu">
           <li><a href="{{route('admin.dashboard')}}"><i class="fa fa-home"></i> Home </a>
             </li>
-            <li><a><i class="fa fa-edit"></i> Member Product <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-edit"></i> Student <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="#">Product List</a></li>
+                <li><a href="{{route('student.list')}}">Student List</a></li>
               </ul>
             </li>
             <li><a><i class="fa fa-users"></i> Members <span class="fa fa-chevron-down"></span></a>

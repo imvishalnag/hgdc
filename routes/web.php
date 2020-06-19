@@ -22,4 +22,9 @@ Route::post('/admin/logout', 'Admin\AdminLoginController@logout')->name('admin.l
 // Admin Dashboard
 Route::group(['middleware'=>'auth:admin','prefix'=>'admin','namespace'=>'Admin'],function(){
     Route::get('/dashboard', 'AdminDashboardController@index')->name('admin.dashboard');
+    Route::get('/student/list/table', 'AdminDashboardController@studentListTable')->name('student.list');
+    Route::get('/student/list', 'AdminDashboardController@studentList')->name('admin.ajax.student_list');    
+    Route::get('/student/show/{id}', 'AdminDashboardController@show')->name('admin.show');
+    Route::get('/student/edit/{id}', 'AdminDashboardController@edit')->name('admin.edit');
+
 });

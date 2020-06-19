@@ -71,6 +71,7 @@
 									<li><a href="{{route('web.about')}}">About HGDC</a></li>
 									<li><a href="{{route('web.goal')}}">Goals and Objectives</a></li>
 									<li><a href="{{route('web.rule')}}">Rules and Regulation</a></li>
+									<li><a href="{{route('web.facilities')}}">Facilities</a></li>
 								</ul>
 							</li>
 							<li><a>Curriculam <i class="fa fa-chevron-down"></i></a>
@@ -80,11 +81,22 @@
 								</ul>
 							</li>
 							<li><a href="{{route('web.teacher')}}">Faculty </a></li>
-                            <li><a href="{{route('web.facilities')}}">Facilities</a></li>
 							<li><a href="{{route('web.result')}}">Results</a></li>
 							<li><a href="{{route('web.gallery')}}">Gallery</a></li>
 							<li><a href="{{route('web.contact')}}">Contact Us</a></li>
-							<li class="active spl" style="background: #fff;"><a href="{{route('web.admission')}}">Online Admission</a></li>
+							<li>
+								@if(Auth::user())
+									<a href="{{ route('web.logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+										Logout
+									</a>     
+									<form id="frm-logout" action="{{ route('web.logout') }}" method="POST" style="display: none;">
+										{{ csrf_field() }}
+									</form>
+								@else
+									<a href="{{route('web.teacher')}}">Faculty </a>
+								@endif
+							</li>
+							<li class="active spl" style="background: #fff;"><a href="{{Auth::user() ? route('web.admission') : route('web.login')}}">Online Admission</a></li>
 						</ul>		
                     </div>
                 </div>

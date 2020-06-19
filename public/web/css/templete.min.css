@@ -1197,6 +1197,7 @@
     background-color: transparent;
     padding: 25px 30px;
     font-weight: 500;
+    color: #243529!important;
   }
   .error-page .input-group {
     border: 2px solid #eceef2;
