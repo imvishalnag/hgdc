@@ -19,7 +19,7 @@
 						<h2 class="error-head">Successful</h2>
 						<p>Your Form Has been Submitted. Please Contact us for futher process</p>
 						<a href="{{route('web.index')}}" class="btn radius-xl btn-md bg-secondary">Return to Home</a>
-						<a href="index-2.html" class="btn radius-xl btn-md"><i class="fa fa-download" aria-hidden="true"></i> Download Form</a>
+						<a href="{{route('web.download')}}" class="btn radius-xl btn-md"><i class="fa fa-download" aria-hidden="true"></i> Download Form</a>
 					</div>
 				</div>
 			</div>

@@ -77,6 +77,9 @@ img.emblem {
     padding: 10px;
     box-shadow: 0 0 12px 0px #2435299c;
 }
+.invalid-feedback{ 
+    display: block !important;
+}
 
 
 /* Media Quires */

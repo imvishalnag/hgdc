@@ -57,10 +57,11 @@
 								<!-- Vision & Mission -->
 								<div class="row">
 									<div class="col-md-6 col-sm-6 mb-2">
-										<p class="text-left"><strong>Submit Date :</strong> 17/06/2020 </p>
+										<p class="text-left"><strong>Submit Date :</strong> {{$user->updated_at}} </p>
 									</div>
 									<div class="col-md-6 col-sm-6 mb-2">
-										<p class="text-right"><strong>Print Date :</strong> 17/06/2020 </p>
+										<p class="text-right"><strong>Print Date :</strong> {{Carbon\Carbon::now()->setTimezone('Asia/Kolkata')->toDateTimeString()}} </p>
+										<button class="btn btn-default pull-right" onclick="event.preventDefault();window.print()">Print</button>
 									</div>
 									<div class="col-md-1 col-sm-1"></div>
 									<div class="col-md-2 col-sm-2">
@@ -78,7 +79,7 @@
 									<form method="post" class="dzForm col-md-12" action="#">
 										<input type="hidden" value="Contact" name="dzToDo">
 										<div class="row">
-											<div class="form-row col-md-12">
+											<div class="form-row col-md-10">
 												<div class="col-md-12 col-sm-12">
 													<h4 class="text-center" style="text-decoration: underline"> Three Year Degree Course (Arts) Admission Form</h4>
 													<h5> Applicant basic information </h5>
@@ -87,79 +88,80 @@
 													<div class="col-md-5 col-sm-5">
 														<div class="form-group">
 															<label for="name"> Applicant Name </label>
-															<p>Jayantika Goswami</p>
+															<p>{{$user->name}}</p>
 														</div>
 													</div>
 													<div class="col-md-2 col-sm-2">
 														<div class="form-group">
 															<label for="dob"> Date of Birth </label>
-															<p>11/02/1994</p>
+															<p>{{$user->dob}}</p>
 														</div>
 													</div>
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
 															<label for="phone"> Phone Number </label>
-															<p>+91 9465098215</p>
+															<p>{{$user->mobile}}</p>
 														</div>
 													</div>
 													<div class="col-md-2 col-sm-2">
 														<div class="form-group">
 															<label for="gender"> Gender</label>
-															<p>Female</p>
+															<p>{{$user->gender}}</p>
 														</div>
 													</div>
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
 															<label for="f-name"> Father's Name </label>
-															<p>Shyam Goswami</p>
+															<p>{{$user->f_name}}</p>
 														</div>
 													</div>
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
 															<label for="f-occoupation"> Father's Occoupation </label>
-															<p>Service</p>
+															<p>{{$user->f_occupation}}</p>
 														</div>
 													</div>
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
-															<label for="m-name"> Mother's Name </label>															<p>Rita Goswami</p>
-														</div>
+															<label for="m-name"> Mother's Name </label>	
+															<p>{{$user->m_name}}</p>		
+														</div>																										</div>
 													</div>
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
 															<label for="m-occoupation"> Mother's Occoupation </label>
-															<p>Housewife</p>
+															<p>{{$user->m_occupation}}</p>
 														</div>
 													</div>
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
 															<label for="nationality"> Nationality </label>
-															<p>Indian</p>
+															<p>{{$user->nationality}}</p>
 														</div>
 													</div>
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
 															<label for="religion"> Religion </label>
-															<p>Hindu</p>
+															<p>{{$user->religion}}</p>
 														</div>
 													</div>
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
 															<label for="material"> Material Status</label>
-															<p>Unmarried</p>
+															<p>{{$user->material}}</p>
 														</div>
 													</div>
 													<div class="col-md-3 col-sm-3">
 														<div class="form-group">
 															<label for="caste"> Caste</label>
-															<p>General</p>
+															<p>{{$user->caste}}</p>
 														</div>
 													</div>
 												</div>
 												<div class="form-row col-md-2">
 													<div>
-														<img src="web/images/test.jpg" alt="">
-														<img class="pt-1" src="web/images/sign.png" alt="">
+														<img src="{{asset('admin/student/'.$user->photo)}}" alt=""><br>
+														<img class="pt-1" src="{{asset('admin/student/'.$user->sign)}}" alt="" >
 													</div>
 												</div>
 											</div>
@@ -171,27 +173,27 @@
 												<div class="col-md-6 col-sm-6">
 													<div class="form-group">
 														<label for="name"> Permanent Address </label>
-														<p>56/1, Rose Valley, Downtown street, Kolkata, WestBengal</p>
+														<p>{{$user->p_address}}</p>
 													</div>
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group m-0">
 														<label for="name"> Village/Town</label>
-														<p>Kolkata</p>
+														<p>{{$user->village}}</p>
 													</div>
 													<div class="form-group">
 														<label for="name">11.c. P.O.</label>
-														<p>Uttar chabishpargona</p>
+														<p>{{$user->po}}</p>
 													</div>
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group m-0">
 														<label for="name"> District</label>
-														<p>Hoogly</p>
+														<p>{{$user->dist}}</p>
 													</div>
 													<div class="form-group">
 														<label for="name"> Pincode.</label>
-														<p>720013</p>
+														<p>{{$user->pin}}</p>
 													</div>
 												</div>
 											</div>
@@ -208,19 +210,19 @@
 													<div class="col-md-4 col-sm-4 mb-0">
 														<div class="form-group">
 															<label for="name">Legal Guardian's Name </label>
-															<p>Babai nath</p>
+															<p>{{$user->g_name}}</p>
 														</div>
 													</div>
 													<div class="col-md-4 col-sm-4 mb-0">
 														<div class="form-group">
 															<label for="name"> Legal Guardian's Relationship </label>
-															<p>Friend</p>
+															<p>{{$user->g_relation}}</p>
 														</div>
 													</div>
 													<div class="col-md-4 col-sm-4 mb-0">
 														<div class="form-group">
 															<label for="name"> Legal Guardian's Pincode</label>
-															<p>781246</p>
+															<p>{{$user->l_pincode}}</p>
 														</div>
 													</div>
 												</div>
@@ -233,32 +235,32 @@
 												</div>
 												<div class="col-md-3 col-sm-3 mb-0">
 													<div class="form-group mb-2">
-														<label for="hslc-div"> Nane of Board/University </label>
-														<p>West Bengal Education Board</p>
+														<label for="hslc-div"> Name of Board/University </label>
+														<p>{{$user->hslc_board}}</p>
 													</div>
 												</div>
 												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group mb-2">
 														<label for="hslc-div"> Year of Passing </label>
-														<p>2015</p>
+														<p>{{$user->hslc_yr}}</p>
 													</div>
 												</div>
 												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group mb-2">
 														<label for="hslc-div"> Exam Roll No.</label>
-														<p>S15041194</p>
+														<p>{{$user->hslc_roll}}</p>
 													</div>
 												</div>
 												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group mb-2">
 														<label for="hslc-div"> Division </label>
-														<p>1st</p>
+														<p>{{$user->hslc_div}}</p>
 													</div>
 												</div>
 												<div class="col-md-3 col-sm-3 mb-0">
 													<div class="form-group mb-2">
 														<label for="hslc-div"> Name of School/College</label>
-														<p>St. Mary School</p>
+														<p>{{$user->hslc_school}}</p>
 													</div>
 												</div>
 												<div class="col-md-12 col-sm-12 mb-0">
@@ -267,31 +269,31 @@
 												<div class="col-md-3 col-sm-3 mb-0">
 													<div class="form-group">
 														<label for="hs-div"> Nane of Board/University </label>
-														<p>West Bengal Higher Secondary Education Board</p>
+														<p>{{$user->hs_board}}</p>
 													</div>
 												</div>
 												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group">
 														<label for="hs-div"> Year of Passing </label>
-														<p>2017</p>
+														<p>{{$user->hs_year}}</p>
 													</div>
 												</div>
 												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group">
 														<label for="hs-div"> Exam Roll No.</label>
-														<p>AH17450094</p>
+														<p>{{$user->hs_roll}}</p>
 													</div>
 												</div>
 												<div class="col-md-2 col-sm-2 mb-0">
 													<div class="form-group">
 														<label for="hs-div"> Division </label>
-														<p>1st</p>
+														<p>{{$user->hs_div}}</p>
 													</div>
 												</div>
 												<div class="col-md-3 col-sm-3 mb-0">
 													<div class="form-group">
 														<label for="hs-div"> Name of School/College</label>
-														<p>St. Mary School</p>
+														<p>{{$user->hs_school}}</p>
 													</div>
 												</div>
 												<div class="col-md-12 col-sm-12">
@@ -305,47 +307,33 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <td>Subject1</td>
-                                                                <td>100</td>
-                                                                <td>80</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Subject2</td>
-                                                                <td>100</td>
-                                                                <td>80</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Subject3</td>
-                                                                <td>100</td>
-                                                                <td>80</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Subject4</td>
-                                                                <td>100</td>
-                                                                <td>80</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Subject5</td>
-                                                                <td>100</td>
-                                                                <td>80</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Subject6</td>
-                                                                <td>100</td>
-                                                                <td>80</td>
-                                                            </tr>
-                                                        </tbody>
+															@if(isset($user->subjects) && !empty($user->subjects))
+																@foreach($user->subjects as $sub)
+																	<tr>
+																		<td>{{$sub->subject_name}}</td>
+																		<td>{{$sub->full_marks}}</td>
+																		<td>{{$sub->marks_scored}}</td>
+																	</tr>
+																@endforeach
+															@endif
+														</tbody>
+														<tfoot>
+															<tr>
+																<th>Total</th>
+																<td></td>
+																<td colspan="2">{{$user->t_mark}}</td>
+															</tr>
+														</tfoot>
 													</table>
 												</div>
 											</div>
-											<div class="form-row col-md-12">
+											{{-- <div class="form-row col-md-12">
 												<div class="col-md-12 col-sm-12">
 													<hr>
 													<h5> Subject selection </h5>
 													<h6>In which course your are seeking admission for</h6>
 													<div class="form-group">
-														<p>Honours Course</p>
+														<p>Course</p>
 													</div>
 												</div>
 												<div class="form-row col-md-12" id="h-course" style="">
@@ -382,7 +370,7 @@
 														</div>
 													</div>
 												</div>
-											</div>
+											</div> --}}
 										</div>
 									</form>
 								</div>
