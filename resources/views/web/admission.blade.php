@@ -480,16 +480,11 @@
 														<div class="form-group">
 															<label for="name">22.c. Compulsory Subject</label>													
 															<div class="form-group mb-1">
-																<span class="CKRD"><input name="environment" type="checkbox" value="Enviromental Studies" checked disabled>Enviromental Studies &nbsp;</span>
-																<input type="hidden" name="env" value="Enviromental Studies">
-																<span class="CKRD"><input class="h-comp-sub-s" name="engl_comm" type="checkbox" value="English Communication">English Communication  or, &nbsp;</span>
-																<span class="CKRD"><input class="h-comp-sub-s" name="mil" type="checkbox">MIL (Assamese/Hindi) Communication &nbsp;</span>
+																<span class="CKRD"><input type="checkbox" name="compulsory[]" checked disabled>Enviromental Studies &nbsp;</span>
+																					<input type="hidden" name="compulsory[]" value="Enviromental Studies">
+																<span class="CKRD"><input class="h-comp-sub-s" name="compulsory[]" type="checkbox" value="English Communication">English Communication  or, &nbsp;</span>
+																<span class="CKRD"><input class="h-comp-sub-s" type="checkbox" name="compulsory[]" value="MIL (Assamese/Hindi)">MIL (Assamese/Hindi) Communication &nbsp;</span>
 															</div>																	
-															<div class="form-group">									
-																<label for="name">22.c.1. MIL</label>	<br>	
-																<span class="CKRD"><input class="h-comp-sub-s" name="assamese" type="checkbox" value="Assamese">Assamese  or, &nbsp;</span>
-																<span class="CKRD"><input class="h-comp-sub-s" name="hindi" type="checkbox" value="Hindi">Hindi &nbsp;</span>
-															</div>
 														</div>
 													</div>
 												</div>
@@ -498,12 +493,12 @@
 														<div class="form-group">
 															<label for="name">22.a. Elective Subject <b style="color:red; font-weight:500;">(Any Two)</b></label>											
 															<div class="form-group">
-																<span class="CKRD"><input class="r-ele-sub" name="educ" value="Education" type="checkbox">Education &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="econ" type="checkbox" value="Econonics/Elective Assamese (ASL)">Econonics/Elective Assamese (ASL) &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="phil" type="checkbox" value="Pholisophy">Pholisophy &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="pol" type="checkbox" value="Political Science">Political Science &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="cs" type="checkbox" value="Computer Science">Computer Science &nbsp;</span>
-																<span class="CKRD"><input class="r-ele-sub" name="maths" type="checkbox" value="Mathematics">Mathematics &nbsp;</span>
+																<span class="CKRD"><input class="r-ele-sub" name="elective[]" value="Education" type="checkbox">Education &nbsp;</span>
+																<span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Econonics/Elective Assamese (ASL)">Econonics/Elective Assamese (ASL) &nbsp;</span>
+																<span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Pholisophy">Pholisophy &nbsp;</span>
+																<span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Political Science">Political Science &nbsp;</span>
+																<span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Computer Science">Computer Science &nbsp;</span>
+																<span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Mathematics">Mathematics &nbsp;</span>
 															</div>
 														</div>
 													</div>
@@ -511,18 +506,13 @@
 														<div class="form-group">
 															<label for="name">22.b. Compulsory Subject</label>											
 															<div class="form-group">
-																<span class="CKRD"><input name="comp-sub" type="checkbox" checked disabled>English &nbsp;</span>
-																<input type="hidden" name="engl" value="English">
-																<span class="CKRD"><input name="comp-sub" type="checkbox" checked disabled>Enviromental Studies &nbsp;</span>
-																<input type="hidden" name="env" value="Environmental Studies">
-																<span class="CKRD"><input class="r-comp-sub-s" name="comp-sub" type="checkbox">English Communication &nbsp;</span>
-																<span class="CKRD"><input class="r-comp-sub-s" name="comp-sub" type="checkbox">MIL (Assamese/Hindi) Communication &nbsp;</span>
+																<span class="CKRD"><input name="compulsory1[]" type="checkbox" checked disabled>English &nbsp;</span>
+																<input type="hidden" name="compulsory1[]" value="English">
+																<span class="CKRD"><input name="compulsory1[]" type="checkbox" checked disabled>Enviromental Studies &nbsp;</span>
+																<input type="hidden" name="compulsory1[]" value="Environmental Studies">
+																<span class="CKRD"><input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="English Communication">English Communication &nbsp;</span>
+																<span class="CKRD"><input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="MIL (Assamese/Hindi)">MIL (Assamese/Hindi) Communication &nbsp;</span>
 															</div>																	
-															<div class="form-group" id="mil">								
-																<label for="name">22.c.1. MIL</label> <br>		
-																<span class="CKRD"><input class="h-comp-sub-s" name="h-comp-sub" type="checkbox">Assamese  or, &nbsp;</span>
-																<span class="CKRD"><input class="h-comp-sub-s" name="h-comp-sub" type="checkbox">Hindi &nbsp;</span>
-															</div>
 														</div>
 													</div>
 												</div>
@@ -610,11 +600,14 @@
 					$(".r-comp-sub-s").prop('checked',false);    
 					$(this).prop('checked',true);
 				});
-
-				$("input[name='comp-sub']").click(function () {
-					alert($(this).val())
-					$('#mil').css('display', ($(this).val() === 'l-gurdian-yes') ? 'inline-flex':'none');
-				});
+				// $("#mil").css('display', "none");
+				// $("#mil_ch").click(function () {
+				// 	$('#mil').css('display', ($(this).val() ==='MIL') ? 'inline-flex': '');
+				// });
+				// $("#mil").css('display', "none");
+				// $("#mil_chk").click(function () {
+				// 	$('#mil').css('display', ($(this).val() ==='MIL') ? 'inline-flex': '');
+				// });
 
 				// Subject Adding Added By Saddam
 				var max_fields      = 10; //maximum input boxes allowed
@@ -657,5 +650,34 @@
 				// var i = 1;
 				
 			});
+
+			function myFunction() {
+				// Get the checkbox
+				var checkBox = document.getElementById("myCheck");
+				// Get the output text
+				var text = document.getElementById("text");
+
+				// If the checkbox is checked, display the output text
+				if (checkBox.checked == true){
+					text.style.display = "block";
+				} else {
+					text.style.display = "none";
+				}
+				}
+
+				function myTest() {
+				// Get the checkbox
+				var checkBox = document.getElementById("myCheck");
+				// Get the output text
+				var text = document.getElementById("text");
+
+				// If the checkbox is checked, display the output text
+				if (checkBox.checked == true){
+					text.style.display = "block";
+				} else {
+					text.style.display = "none";
+				}
+				}				
+
 		</script>
 	@endsection

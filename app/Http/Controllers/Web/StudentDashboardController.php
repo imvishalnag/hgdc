@@ -25,7 +25,7 @@ class StudentDashboardController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
+        // $this->validate($request, [
             // 'name'              => 'required',
         //     'dob'               => 'required',
         //     'gender'            => 'required',
@@ -54,8 +54,8 @@ class StudentDashboardController extends Controller
         //     'hs_school'         => 'required',
         //     'sign'              => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024', 
         //     'photo'             => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);
-
+        // ]);
+       
         $user = User::find(Auth::user()->id);
         $user->name = $request->input('name');
         $user->dob = $request->input('dob');
@@ -101,8 +101,8 @@ class StudentDashboardController extends Controller
             Image::make($image)
             ->resize(300, 400)
             ->save($thumb_path);
+            $user->photo = $photo;
         }
-
         if($request->hasfile('sign'))
         {
             $image = $request->file('sign');
@@ -115,10 +115,8 @@ class StudentDashboardController extends Controller
             Image::make($image)
             ->resize(300, 400)
             ->save($thumb_path);
+            $user->sign = $sign;
         }
-
-        $user->photo = $photo;
-        $user->sign = $sign;
         $user->status = "2";
         $validatedData = $request->validate([
             'subject_name.*' => 'required',
@@ -137,7 +135,6 @@ class StudentDashboardController extends Controller
         if($user->save()){
             $subjects = DB::table('subjects')
             ->insert($subjects);
-
                 // Subject Selection in Honours
             if($request->input('course-type') == 'h_course'){
                 if($request->input('honors') == $request->input('honors_other')){
@@ -148,44 +145,48 @@ class StudentDashboardController extends Controller
                 $user_honors_subject->honors = $request->input('honors');
                 $user_honors_subject->honors_other = $request->input('honors_other');
                 if($user_honors_subject->save()){
+                    // Compulsory
                         $compulsory_subject = new Compulsory;
-                        $compulsory_subject->user_id = Auth::user()->id;
-                        $compulsory_subject->environment = $request->input('env');
-                        $compulsory_subject->engl_comm = $request->input('engl_comm');
-                        if($request->input('mil')){
-                            $compulsory_subject->mil = $request->input('assamese');
-                        }else{
-                            $compulsory_subject->mil = $request->input('hindi');
+                        $compulsory = $request->input('compulsory');
+                        $id = Auth::user()->id;
+                        for ($i = 0; $i < count($compulsory); $i++) {
+                            $dataSet[] = [
+                                'user_id' => $id,
+                                'compulsory_subject' => $compulsory[$i],
+                            ];
                         }
-
-                        $compulsory_subject->save();
-                }
+                        Compulsory::insert($dataSet);
+                 }
                 }
             }else if($request->input('course-type') == 'r_course'){
                 $user_regular_subject = new RegularSubject;
-                $user_regular_subject->user_id = Auth::user()->id;
-                $user_regular_subject->educ =  $request->input('educ');
-                $user_regular_subject->econ = $request->input('econ');
-                $user_regular_subject->phil = $request->input('phil');
-                $user_regular_subject->pol = $request->input('pol');
-                $user_regular_subject->cs = $request->input('cs');
-                $user_regular_subject->maths = $request->input('maths');
-                if($user_regular_subject->save()){
+                $id = Auth::user()->id;
+                $elective = $request->input('elective');
+                $dataSet = [];
+                for ($i = 0; $i < count($elective); $i++) {
+                    $dataSet[] = [
+                        'user_id' => $id,
+                        'subjects' => $elective[$i],
+                    ];
+                }
+                    RegularSubject::insert($dataSet);
                     $compulsory_subject = new Compulsory;
                     $compulsory_subject->user_id = Auth::user()->id;
-                    $compulsory_subject->environment = $request->input('env');
-                    $compulsory_subject->engl_comm = $request->input('engl_comm');
-                    $compulsory_subject->engl = $request->input('engl');
-                    if($request->input('mil')){
-                        $compulsory_subject->mil = $request->input('assamese');
-                    }else{
-                        $compulsory_subject->mil = $request->input('hindi');
+                    $compulsory = $request->input('compulsory1');
+                    if($request->input('mil_chk')){
+                        $compulsory_subject->compulsory_subject = $request->input('compulsory1');
                     }
-
-                    $compulsory_subject->save();
-                }
+                    $compulsory_subject->compulsory_subject = $request->input('compulsory1');
+                    $data = [];
+                    for ($i = 0; $i < count($compulsory); $i++) {
+                        $data[] = [
+                            'user_id' => $id,
+                            'compulsory_subject' => $compulsory[$i],
+                        ];
+                    }
+                   Compulsory::insert($data);
             }
-            return redirect()->route('');
+            return redirect()->route('web.download');
         }else{
             return back()->with('error','Something went wrong!');
         }
@@ -193,6 +194,21 @@ class StudentDashboardController extends Controller
     
     public function thanks()
     {
-        return view('web.thanks');
+        $user = User::where('id', Auth::user()->id)->first();
+        if(Auth::user()->status == "1"){
+            return view('web.admission', compact('user'));
+        }else if(Auth::user()->status == "2"){
+            return view('web.thanks');
+        }
+    }
+
+    public function download()
+    {
+        $user = User::with(['subjects', 'honors'])->where('id', Auth::user()->id)->first();
+        if(Auth::user()->status == "1"){
+            return view('web.admission', compact('user'));
+        }else if(Auth::user()->status == "2"){
+            return view('web.view-form', compact('user'));
+        }
     }
 }

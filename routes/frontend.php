@@ -23,6 +23,7 @@ Route::group(['middleware'=>'auth:web','prefix'=>'web','namespace'=>'Web'],funct
     Route::get('/admission', 'StudentDashboardController@index')->name('web.admission');
     Route::post('/form/submit', 'StudentDashboardController@store')->name('student.store');
     Route::get('/thanks', 'StudentDashboardController@thanks')->name('web.thanks');
+    Route::get('/download', 'StudentDashboardController@download')->name('web.download');
 });
 // =========== Index ============= 
 Route::get('/', function () {
@@ -95,7 +96,5 @@ Route::get('/contact', function () {
 // })->name('web.admission');
 
 // =========== View-form ============= 
-Route::get('/View-form', function () {
-    return view('web.view-form');
-})->name('web.view-form');
+
 
