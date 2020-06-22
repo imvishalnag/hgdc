@@ -327,7 +327,7 @@
 													</table>
 												</div>
 											</div>
-											<div class="form-row col-md-12">
+											{{-- <div class="form-row col-md-12">
 												<div class="col-md-12 col-sm-12">
 													<hr>
 													<h5> Subject selection </h5>
@@ -370,7 +370,7 @@
 														</div>
 													</div>
 												</div>
-											</div>
+											</div> --}}
 										</div>
 									</form>
 								</div>
