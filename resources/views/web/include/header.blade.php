@@ -105,16 +105,3 @@
         <!-- main header END -->
     </header>
     <!-- header END -->
-	<!-- <div class="action-area marquee-head marquee">
-		<ul>
-			<li><a href="courses-details.html">RESULT OF SSC CGL 2020 (TIER-3)</a></li>
-			<li><a href="courses-details.html">SSC CGL 2020 PRE Application Status</a></li>
-			<li><a href="courses-details.html">SSC CHSL 2020 Result Declared</a></li>
-			<li><a href="courses-details.html">RESULT OF SSC CGL 2020 (TIER-3)</a></li>
-			<li><a href="courses-details.html">SSC CGL 2020 PRE Application Status</a></li>
-			<li><a href="courses-details.html">SSC CHSL 2020 Result Declared</a></li>
-			<li><a href="courses-details.html">RESULT OF SSC CGL 2020 (TIER-3)</a></li>
-			<li><a href="courses-details.html">SSC CGL 2020 PRE Application Status</a></li>
-			<li><a href="courses-details.html">SSC CHSL 2020 Result Declared</a></li>
-		</ul>
-	</div> -->

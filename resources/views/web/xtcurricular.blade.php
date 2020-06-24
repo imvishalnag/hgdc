@@ -53,7 +53,7 @@
 										The college celebrates its Foundation Day (21" August), Freshman Social, Teachers' Day, Saraswati Puja and College Week in every year.</p></li>
 
 										<li class="m-3 text-justify"><p> <strong>College Magazine : </strong> <br>
-										1. The College Magazine, Azar' is being published every year. <br>
+										1. The College Magazine, 'EJAR' is being published every year. <br>
 										2. Wall Magazine is also published every year on the occasion of Freshmen Social.</p></li>
 
 										<li class="m-3 text-justify"><p> <strong>Other Programmes : </strong> <br>
