@@ -9,8 +9,9 @@ use DataTables;
 class AdminDashboardController extends Controller
 {
     public function index()
-    {        
-        return view('admin.dashboard');
+    {     
+        $user = User::where('status', 2)->orderBy('created_at', 'DESC')->limit(10)->get();
+        return view('admin.dashboard',compact('user'));
     }
 
     public function studentListTable()

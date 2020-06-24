@@ -37,7 +37,27 @@
           </thead>
 
           <tbody>
-
+            @if (isset($user) && !empty($user))
+            @php
+                $count = 1;
+            @endphp
+                @foreach ($user as $item)
+                    <tr>
+                      <td>{{$count++}}</td>
+                      <td>{{$item->student_id}}</td>
+                      <td>{{$item->name}}</td>
+                      <td>{{$item->mobile}}</td>
+                      <td>
+                        @if ($item->course_status == '1')
+                            Honours
+                        @else
+                            Regular
+                        @endif
+                      </td>
+                      <td>{{$item->created_at}}</td>
+                    </tr>
+                @endforeach
+            @endif
           </tbody>
       </table>
   </div>

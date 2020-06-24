@@ -10,6 +10,9 @@ use Carbon\Carbon;
 use Auth;
 use Hash;
 use App\Helper\SmsSend;
+
+use App\Gallery;
+
 class FrontendController extends Controller
 {
     public function login()

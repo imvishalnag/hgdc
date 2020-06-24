@@ -27,4 +27,9 @@ Route::group(['middleware'=>'auth:admin','prefix'=>'admin','namespace'=>'Admin']
     Route::get('/student/show/{id}', 'AdminDashboardController@show')->name('admin.show');
     Route::get('/student/edit/{id}', 'AdminDashboardController@edit')->name('admin.edit');
 
+    Route::get('/add/gallery/', 'ConfigController@addGalleryForm')->name('admin.add_gallery_form');
+    Route::post('/insert/gallery/', 'ConfigController@addGallery')->name('admin.insert_gallery');
+    Route::get('/list/gallery/', 'ConfigController@galleryList')->name('admin.gallery_list');
+    Route::get('/image/delete/{id}', 'ConfigController@galleryDelete')->name('admin.gallery_delete');
+
 });

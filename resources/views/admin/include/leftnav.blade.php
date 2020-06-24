@@ -32,24 +32,17 @@
                 <li><a href="{{route('student.list')}}">Student List</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-users"></i> Members <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-users"></i> Gallery <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="#">Member List</a></li>
-                <li><a href="#">Commision History</a></li>
-                <li><a href="#">Member Wallet List</a></li>
+                <li><a href="{{route('admin.add_gallery_form')}}">Upload Gallery Image</a></li>
+                <li><a href="{{route('admin.gallery_list')}}">Gallery Image List</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-shopping-cart"></i> Shopping <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-shopping-cart"></i> Notifications <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="#">Slider List</a></li>
-                <li><a href="#">Product List</a></li>
-                <li><a href="#">Category List</a></li>
+                <li><a href="#">Add New Notification</a></li>
+                <li><a href="#">Notification List</a></li>
               </ul>
-            </li>
-            <li>
-                <a href="#">
-                  <i class="fa fa-bell"></i> Important Notice
-                </a>
             </li>
           </ul>
         </div>
