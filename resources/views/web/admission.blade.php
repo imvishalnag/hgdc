@@ -57,8 +57,8 @@
 												</div>
 												<div class="col-md-4 col-sm-4">
 													<div class="form-group">
-														<label for="name">1. Name in Full </label>
-														<input name="name" type="text" value="{{old("name")}}" class="form-control">
+														<label for="name">1. Name in Full <span style="color:red"><b> * </b></span> </label>
+														<input name="name" type="text" value="{{old("name")}}" class="form-control" required>
 														@if($errors->has('name'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('name') }}</strong>
@@ -68,10 +68,10 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="dob">2. Date of Birth </label>
-														<input name="dob" type="date" value="{{old("dob")}}" class="form-control">
+														<label for="dob">2. Date of Birth <span style="color:red"><b> * </b></span></label>
+														<input name="dob" type="date" value="{{old("dob")}}" class="form-control" required>
 														@if($errors->has('dob'))
-															<span class="invalid-feedback" role="alert" style="color:red">
+															<span class="invalid-feedback" role="alert" style="color:red" >
 																<strong>{{ $errors->first('dob') }}</strong>
 															</span>
 														@enderror
@@ -79,14 +79,14 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="phone">3. Phone Number </label>
+														<label for="phone">3. Phone Number <span style="color:red"><b> * </b></span></label>
 														<input name="phone" type="text" value="{{$user->mobile}}" disabled class="form-control">
-														<input name="mobile" type="hidden" value="{{$user->mobile}}" class="form-control">
+														<input name="mobile" type="hidden" value="{{$user->mobile}}" class="form-control" required>
 													</div>
 												</div>
 												<div class="col-md-2 col-sm-2">
 													<div class="form-group">
-														<label for="gender">4. Gender</label>
+														<label for="gender">4. Gender <span style="color:red"><b> * </b></span></label>
 														<select name="gender">
 															<option value="Male" {{old('sex') == 'Male'?'selected':''}}>Male</option>
 															<option value="Female" {{old('sex') == 'Female'?'selected':''}}>Female</option>
@@ -100,8 +100,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="f_name">5.a. Father's Name </label>
-														<input name="f_name" value="{{old("f_name")}}" type="text" class="form-control">
+														<label for="f_name">5.a. Father's Name <span style="color:red"><b> * </b></span></label>
+														<input name="f_name" value="{{old("f_name")}}" type="text" class="form-control" required>
 														@if($errors->has('f_name'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('f_name') }}</strong>
@@ -122,8 +122,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="m_name">6.a. Mother's Name </label>
-														<input name="m_name" value="{{old("m_name")}}" type="text" class="form-control">
+														<label for="m_name">6.a. Mother's Name <span style="color:red"><b> * </b></span></label>
+														<input name="m_name" value="{{old("m_name")}}" type="text" class="form-control" required>
 														@if($errors->has('m_name'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('m_name') }}</strong>
@@ -144,8 +144,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="nationality">7. Nationality </label>
-														<input name="nationality" value="{{old("nationality")}}" type="text" class="form-control">
+														<label for="nationality">7. Nationality <span style="color:red"><b> * </b></span></label>
+														<input name="nationality" value="{{old("nationality")}}" type="text" class="form-control" required>
 														@if($errors->has('nationality'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('nationality') }}</strong>
@@ -155,10 +155,10 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="religion">8. Religion </label>
-														<input name="religion" value="{{old("religion")}}" type="text" class="form-control">
+														<label for="religion">8. Religion <span style="color:red"><b> * </b></span></label>
+														<input name="religion" value="{{old("religion")}}" type="text" class="form-control" required>
 														@if($errors->has('religion'))
-															<span class="invalid-feedback" role="alert" style="color:red">
+															<span class="invalid-feedback" role="alert" style="color:red" >
 																<strong>{{ $errors->first('religion') }}</strong>
 															</span>
 														@enderror
@@ -166,8 +166,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="material">9. Material Status</label>
-														<select name="material">
+														<label for="material">9. Marital Status <span style="color:red"><b> * </b></span></label>
+														<select name="material" required>
 															<option {{old('material') == 'Married'?'selected':''}}>Married</option>
 															<option {{old('material') == 'Unmarried'?'selected':''}}>Unmarried</option>
 														</select>
@@ -180,7 +180,7 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="caste">10. Caste</label>
+														<label for="caste">10. Caste <span style="color:red"><b> * </b></span></label>
 														<select name="caste">
 															<option {{old('caste') == 'SC'?'selected':''}}>SC</option>
 															<option {{old('caste') == 'ST'?'selected':''}}>ST</option>
@@ -202,8 +202,8 @@
 												</div>
 												<div class="col-md-6 col-sm-6">
 													<div class="form-group">
-														<label for="p_address">11.a. Permanent Address </label>
-														<textarea name="p_address" style="height:120px" class="form-control" placeholder="Your message here">{{old("p_address")}}</textarea>
+														<label for="p_address">11.a. Permanent Address <span style="color:red"><b> * </b></span></label>
+														<textarea name="p_address" style="height:120px" class="form-control" placeholder="Your message here" required>{{old("p_address")}}</textarea>
 														@if($errors->has('p_address'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('p_address') }}</strong>
@@ -213,8 +213,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group m-0">
-														<label for="village">11.b. Village/Town</label>
-														<input name="village" value="{{old("village")}}" type="text" class="form-control">
+														<label for="village">11.b. Village/Town <span style="color:red"><b> * </b></span></label>
+														<input name="village" value="{{old("village")}}" type="text" class="form-control" required>
 														@if($errors->has('village'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('village') }}</strong>
@@ -222,8 +222,8 @@
 														@enderror
 													</div>
 													<div class="form-group">
-														<label for="po">11.c. P.O.</label>
-														<input name="po" value="{{old("po")}}" type="text" class="form-control">
+														<label for="po">11.c. P.O. <span style="color:red"><b> * </b></span></label>
+														<input name="po" value="{{old("po")}}" type="text" class="form-control" required>
 														@if($errors->has('po'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('po') }}</strong>
@@ -233,8 +233,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group m-0">
-														<label for="dist">11.d. District</label>
-														<input name="dist" value="{{old("dist")}}" type="text" class="form-control">
+														<label for="dist">11.d. District <span style="color:red"><b> * </b></span></label>
+														<input name="dist" value="{{old("dist")}}" type="text" class="form-control" required>
 														@if($errors->has('dist'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('dist') }}</strong>
@@ -242,8 +242,8 @@
 														@enderror
 													</div>
 													<div class="form-group">
-														<label for="pin">11.e. Pincode.</label>
-														<input name="pin" value="{{old("pin")}}" type="text" class="form-control">
+														<label for="pin">11.e. Pincode. <span style="color:red"><b> * </b></span></label>
+														<input name="pin" value="{{old("pin")}}" type="number" class="form-control" required>
 														@if($errors->has('pin'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('pin') }}</strong>
@@ -257,29 +257,12 @@
 													<hr>
 													<h5>If you have a legal guardian </h5>
 													<div class="form-group">
-														<span class="CKRD"><input name="l_guardian" type="radio" value="l-gurdian-yes">Yes</span>
-														<span class="CKRD"><input name="l_guardian" type="radio" checked value="l-gurdian-no">No</span>
+														<span class="CKRD"><input name="l_guardian" type="radio" value="yes">Yes</span>
+														<span class="CKRD"><input name="l_guardian" type="radio" checked value="no">No</span>
 													</div>
 												</div>
-												<div class="form-row col-md-12" id="l-gurdian-div" style="display:none">
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group">
-															<label for="name">12.a. Legal Guardian's Name </label>
-															<input name="g_name" value="{{old("g_name")}}" type="text" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group">
-															<label for="name">12.b. Legal Guardian's Relationship </label>
-															<input name="g_relation" value="{{old("g_relation")}}" type="text" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group">
-															<label for="name">12.b. Legal Guardian's Pincode</label>
-															<input name="l_pincode" value="{{old("l_pincode")}}" type="text" class="form-control">
-														</div>
-													</div>
+												<div class="form-row col-md-12" id="l_guardian_div" style="display:none">
+													
 												</div>
 											</div>
 											<div class="form-row col-md-12">
@@ -290,8 +273,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.a. Name of Board/University </label>
-														<input name="hslc_board" value="{{old("hslc_board")}}"type="text" class="form-control">
+														<label for="hslc-div">13.a. Name of Board/University <span style="color:red"><b> * </b></span></label>
+														<input name="hslc_board" value="{{old("hslc_board")}}"type="text" class="form-control" required>
 														@if($errors->has('hslc_board'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hslc_board') }}</strong>
@@ -301,8 +284,8 @@
 												</div>
 												<div class="col-md-2 col-sm-2">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.b. Year of Passing </label>
-														<input name="hslc_yr" value="{{old("hslc_yr")}}"type="text" class="form-control">
+														<label for="hslc-div">13.b. Year of Passing <span style="color:red"><b> * </b></span></label>
+														<input name="hslc_yr" value="{{old("hslc_yr")}}"type="number" class="form-control" required>
 														@if($errors->has('hslc_yr'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hslc_yr') }}</strong>
@@ -312,8 +295,8 @@
 												</div>
 												<div class="col-md-2 col-sm-2">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.c. Exam Roll No.</label>
-														<input name="hslc_roll" value="{{old("hslc_roll")}}"type="text" class="form-control">
+														<label for="hslc-div">13.c. Exam Roll No. <span style="color:red"><b> * </b></span></label>
+														<input name="hslc_roll" value="{{old("hslc_roll")}}"type="text" class="form-control" required>
 														@if($errors->has('hslc_roll'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hslc_roll') }}</strong>
@@ -323,8 +306,8 @@
 												</div>
 												<div class="col-md-2 col-sm-2">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.d. Division </label>
-														<input name="hslc_div" value="{{old("hslc_div")}}"type="text" class="form-control">
+														<label for="hslc-div">13.d. Division <span style="color:red"><b> * </b></span></label>
+														<input name="hslc_div" value="{{old("hslc_div")}}"type="text" class="form-control" required>
 														@if($errors->has('hslc_div'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hslc_div') }}</strong>
@@ -334,8 +317,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group mb-2">
-														<label for="hslc-div">13.e. Name of School/College</label>
-														<input name="hslc_school" value="{{old("hslc_school")}}"type="text" class="form-control">
+														<label for="hslc-div">13.e. Name of School/College <span style="color:red"><b> * </b></span></label>
+														<input name="hslc_school" value="{{old("hslc_school")}}"type="text" class="form-control" required>
 														@if($errors->has('hslc_school'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hslc_school') }}</strong>
@@ -348,8 +331,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="hs-div">14.a. Name of Board/University </label>
-														<input name="hs_board" value="{{old("hs_board")}}"type="text" class="form-control">
+														<label for="hs-div">14.a. Name of Board/University <span style="color:red"><b> * </b></span></label>
+														<input name="hs_board" value="{{old("hs_board")}}"type="text" class="form-control" required>
 														@if($errors->has('hs_board'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hs_board') }}</strong>
@@ -359,8 +342,8 @@
 												</div>
 												<div class="col-md-2 col-sm-2">
 													<div class="form-group">
-														<label for="hs-div">14.b. Year of Passing </label>
-														<input name="hs_year" value="{{old("hs_year")}}" type="text" class="form-control">
+														<label for="hs-div">14.b. Year of Passing <span style="color:red"><b> * </b></span></label>
+														<input name="hs_year" value="{{old("hs_year")}}" type="text" class="form-control" required>
 														@if($errors->has('hs_year'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hs_year') }}</strong>
@@ -370,8 +353,8 @@
 												</div>
 												<div class="col-md-2 col-sm-2">
 													<div class="form-group">
-														<label for="hs-div">14.c. Exam Roll No.</label>
-														<input name="hs_roll" value="{{old("hs_roll")}}" type="text" class="form-control">
+														<label for="hs-div">14.c. Exam Roll No. <span style="color:red"><b> * </b></span></label>
+														<input name="hs_roll" value="{{old("hs_roll")}}" type="text" class="form-control" required>
 														@if($errors->has('hs_roll'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hs_roll') }}</strong>
@@ -381,8 +364,8 @@
 												</div>
 												<div class="col-md-2 col-sm-2">
 													<div class="form-group">
-														<label for="hs-div">14.d. Division </label>
-														<input name="hs_div" value="{{old("hs_div")}}" type="text" class="form-control">
+														<label for="hs-div">14.d. Division <span style="color:red"><b> * </b></span></label>
+														<input name="hs_div" value="{{old("hs_div")}}" type="text" class="form-control" required>
 														@if($errors->has('hs_div'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hs_div') }}</strong>
@@ -392,8 +375,8 @@
 												</div>
 												<div class="col-md-3 col-sm-3">
 													<div class="form-group">
-														<label for="hs_school">14.e. Name of School/College</label>
-														<input name="hs_school" value="{{old("hs_school")}}" type="text" class="form-control">
+														<label for="hs_school">14.e. Name of School/College <span style="color:red"><b> * </b></span></label>
+														<input name="hs_school" value="{{old("hs_school")}}" type="text" class="form-control" required>
 														@if($errors->has('hs_school'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('hs_school') }}</strong>
@@ -407,20 +390,20 @@
 												<div class="form-row col-md-12 subjects">
 													<div class="col-md-4 col-sm-4">
 														<div class="form-group mb-2">
-															<label for="hs-sub6-mark">20.a. Subject1 Name</label>
-															<input name="subject_name[]" type="text" class="form-control">
+															<label for="hs-sub6-mark">20.a. Subject1 Name <span style="color:red"><b> * </b></span></label>
+															<input name="subject_name[]" type="text" class="form-control" required>
 														</div>
 													</div>
 													<div class="col-md-2 col-sm-2 col-xs-6">
 														<div class="form-group mb-2">
-															<label for="hs-sub6--mark">20.b. Full Mark </label>
-															<input name="full_marks[]" type="text" class="form-control">
+															<label for="hs-sub6--mark">20.b. Full Mark <span style="color:red"><b> * </b></span></label>
+															<input name="full_marks[]" type="text" class="form-control" required>
 														</div>
 													</div>
 													<div class="col-md-2 col-sm-2 col-xs-6">
 														<div class="form-group mb-2">
-															<label for="hs-sub6-mark">20.c. Mark Scrored</label>
-															<input name="marks_scored[]" type="text" class="form-control">
+															<label for="hs-sub6-mark">20.c. Mark Scored <span style="color:red"><b> * </b></span></label>
+															<input name="marks_scored[]" type="text" class="form-control" required>
 														</div>
 													</div>
 													<button type="button" class="btn btn-primary btn-sm" id="add"> 
@@ -430,8 +413,8 @@
 												<div class="form-row col-md-12">
 													<div class="col-md-4 col-sm-4">
 														<div class="form-group mb-2">
-															<label for="t_mark">21. Total Marks Obtain</label>
-															<input name="t_mark" type="text" class="form-control">
+															<label for="t_mark">21. Total Marks Obtain <span style="color:red"><b> * </b></span></label>
+															<input name="t_mark" type="text" class="form-control" required>
 														</div>
 													</div>
 												</div>
@@ -440,7 +423,7 @@
 												<div class="col-md-12 col-sm-12">
 													<hr>
 													<h5> Subject selection </h5>
-													<h6>In which course your are seeking admission for</h6>
+													<h6>In which course your are seeking admission for <span style="color:red"><b> * </b></span></h6>
 													<div class="form-group">
 														<span class="CKRD"><input name="course-type" type="radio" value="h_course">Honours Course &nbsp;</span>
 														<span class="CKRD"><input name="course-type" type="radio" value="r_course">Regular Course &nbsp;</span>
@@ -478,12 +461,22 @@
 													</div>
 													<div class="col-md-12 col-sm-12">
 														<div class="form-group">
-															<label for="name">22.c. Compulsory Subject</label>													
+															<label for="name">22.c. Compulsory Subject <span style="color:red"><b> * </b></span></label>													
 															<div class="form-group mb-1">
-																<span class="CKRD"><input type="checkbox" name="compulsory[]" checked disabled>Enviromental Studies &nbsp;</span>
-																					<input type="hidden" name="compulsory[]" value="Enviromental Studies">
-																<span class="CKRD"><input class="h-comp-sub-s" name="compulsory[]" type="checkbox" value="English Communication">English Communication  or, &nbsp;</span>
-																<span class="CKRD"><input class="h-comp-sub-s" type="checkbox" name="compulsory[]" value="MIL (Assamese/Hindi)">MIL (Assamese/Hindi) Communication &nbsp;</span>
+																<span class="CKRD">
+																	<input type="checkbox" name="compulsory[]" checked disabled>Enviromental Studies &nbsp;
+																</span>
+																<input type="hidden" name="compulsory[]" value="Enviromental Studies">
+																<span class="CKRD">
+																	<input class="h-comp-sub-s" name="compulsory[]" type="checkbox" value="English Communication" onclick="getCHonorsLang('English Communication')">English Communication  or, &nbsp;
+																</span>
+																<span class="CKRD">
+																	<input class="h-comp-sub-s" type="checkbox" name="compulsory[]" value="MIL" onclick="getCHonorsLang('MIL')">MIL &nbsp;
+																</span>
+																
+																<span class="CKRD" style="display: none" id="mil_div_honors">
+																		
+																</span>
 															</div>																	
 														</div>
 													</div>
@@ -491,7 +484,7 @@
 												<div class="form-row col-md-12" id="r-course" style="display:none">
 													<div class="col-md-12 col-sm-12">
 														<div class="form-group">
-															<label for="name">22.a. Elective Subject <b style="color:red; font-weight:500;">(Any Two)</b></label>											
+															<label for="name">22.a. Elective Subject <b style="color:red; font-weight:500;">(Any Two)</b> <span style="color:red"><b> * </b></span></label>											
 															<div class="form-group">
 																<span class="CKRD"><input class="r-ele-sub" name="elective[]" value="Education" type="checkbox">Education &nbsp;</span>
 																<span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Econonics/Elective Assamese (ASL)">Econonics/Elective Assamese (ASL) &nbsp;</span>
@@ -504,15 +497,28 @@
 													</div>
 													<div class="col-md-12 col-sm-12">
 														<div class="form-group">
-															<label for="name">22.b. Compulsory Subject</label>											
+															<label for="name">22.b. Compulsory Subject <span style="color:red"><b> * </b></span></label>											
 															<div class="form-group">
-																<span class="CKRD"><input name="compulsory1[]" type="checkbox" checked disabled>English &nbsp;</span>
-																<input type="hidden" name="compulsory1[]" value="English">
-																<span class="CKRD"><input name="compulsory1[]" type="checkbox" checked disabled>Enviromental Studies &nbsp;</span>
-																<input type="hidden" name="compulsory1[]" value="Environmental Studies">
-																<span class="CKRD"><input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="English Communication">English Communication &nbsp;</span>
-																<span class="CKRD"><input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="MIL (Assamese/Hindi)">MIL (Assamese/Hindi) Communication &nbsp;</span>
-															</div>																	
+																<span class="CKRD">
+																	<input name="compulsory1[]" type="checkbox" checked disabled>English &nbsp;</span>
+																	<input type="hidden" name="compulsory1[]" value="English">
+																	<span class="CKRD"><input name="compulsory1[]" type="checkbox" checked disabled>Enviromental Studies &nbsp;</span>
+
+																	<input type="hidden" name="compulsory1[]" value="Environmental Studies">
+																	<span class="CKRD">
+																		<input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="English Communication" onclick="getCheckedGroupBoxes('English Communication')">English Communication &nbsp;
+																	</span>
+
+																	<span class="CKRD">
+																		<input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="MIL" onclick="getCheckedGroupBoxes('MIL')">MIL &nbsp;
+																	</span>
+																	<span class="CKRD" style="display: none" id="mil_div">
+																		
+																	</span>
+
+															</div>	
+															
+
 														</div>
 													</div>
 												</div>
@@ -524,8 +530,45 @@
 												</div>
 												<div class="col-md-6 col-sm-6">
 													<div class="form-group">
-														<label for="name">23. Signature of applicant<b style="color:red; font-weight:500;">(less than 1MB)</b> </label>
-														<input name="sign" type="file" class="form-control">
+														<label for="name"> H.S. Marksheet<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
+														<input name="hs_marksheet" type="file" class="form-control" required>
+														@if($errors->has('hs_marksheet'))
+															<span class="invalid-feedback" role="alert" style="color:red">
+																<strong>{{ $errors->first('hs_marksheet') }}</strong>
+															</span>
+														@enderror
+													</div>
+												</div>
+
+												<div class="col-md-6 col-sm-6">
+													<div class="form-group">
+														<label for="name">H.S. Certificate<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
+														<input name="hs_certificate" type="file" class="form-control" required>
+														@if($errors->has('hs_certificate'))
+															<span class="invalid-feedback" role="alert" style="color:red">
+																<strong>{{ $errors->first('hs_certificate') }}</strong>
+															</span>
+														@enderror
+													</div>
+												</div>
+
+												<div class="col-md-6 col-sm-6">
+													<div class="form-group">
+														<label for="name">Caste Certificate (if Applicable)<b style="color:red; font-weight:500;">(less than 1MB)</b> </label>
+														<input name="caste_certificate" type="file" class="form-control">
+														@if($errors->has('caste_certificate'))
+															<span class="invalid-feedback" role="alert" style="color:red">
+																<strong>{{ $errors->first('caste_certificate') }}</strong>
+															</span>
+														@enderror
+													</div>
+												</div>
+												<div class="col-md-6 col-sm-6"></div>
+
+												<div class="col-md-6 col-sm-6">
+													<div class="form-group">
+														<label for="name">23. Signature of applicant<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
+														<input name="sign" type="file" class="form-control" required>
 														@if($errors->has('sign'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('sign') }}</strong>
@@ -535,8 +578,8 @@
 												</div>
 												<div class="col-md-6 col-sm-6">
 													<div class="form-group">
-														<label for="name">23. Photo of applicant<b style="color:red; font-weight:500;">(less than 1MB)</b> </label>
-														<input name="photo" type="file" class="form-control">
+														<label for="name">23. Photo of applicant<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
+														<input name="photo" type="file" class="form-control" required>
 														@if($errors->has('photo'))
 															<span class="invalid-feedback" role="alert" style="color:red">
 																<strong>{{ $errors->first('photo') }}</strong>
@@ -546,7 +589,7 @@
 												</div>
 												<div class="col-md-12 col-sm-12">
 													<div class="form-group">
-														<input name="delecration" type="checkbox" >I hereby declare that i shall abide by the rules and regulations of the College and also all the above information provided by me are true and in best of my knowledge
+														<input name="delecration" type="checkbox" required>I hereby declare that i shall abide by the rules and regulations of the College and also all the above information provided by me are true and in best of my knowledge
 													</div>
 												</div>
 											</div>
@@ -570,114 +613,5 @@
 	@endsection
 	
 	@section('script') 
-		<script>
-			$(document).ready(function(){
-				// for Course Selection
-				$("input[name='course-type']").click(function () {
-					$('#h-course').css('display', ($(this).val() === 'h_course') ? 'inline-flex':'none');
-					$('#r-course').css('display', ($(this).val() === 'r_course') ? 'inline-flex':'none');
-				});
-				
-				// For Legal Gurdian
-				$("input[name='l_guardian']").click(function () {
-					$('#l-gurdian-div').css('display', ($(this).val() === 'l-gurdian-yes') ? 'inline-flex':'none');
-				});
-				
-				// For Honours Course Compulsary Subject selection
-				$(".h-comp-sub-s").change(function(){                                     		
-					$(".h-comp-sub-s").prop('checked',false);    
-					$(this).prop('checked',true);
-				});
-				
-				$("input.r-ele-sub:checkbox").click(function() {
-					var bol = $("input.r-ele-sub:checkbox:checked").length >= 2;     
-					$("input.r-ele-sub:checkbox").not(":checked").attr("disabled",bol);
-				});
-	
-	
-				// For Regular Course Compulsary Subject selection
-				$(".r-comp-sub-s").change(function(){                                     		
-					$(".r-comp-sub-s").prop('checked',false);    
-					$(this).prop('checked',true);
-				});
-				// $("#mil").css('display', "none");
-				// $("#mil_ch").click(function () {
-				// 	$('#mil').css('display', ($(this).val() ==='MIL') ? 'inline-flex': '');
-				// });
-				// $("#mil").css('display', "none");
-				// $("#mil_chk").click(function () {
-				// 	$('#mil').css('display', ($(this).val() ==='MIL') ? 'inline-flex': '');
-				// });
-
-				// Subject Adding Added By Saddam
-				var max_fields      = 10; //maximum input boxes allowed
-				var wrapper   		= $(".subjects"); //Fields wrapper
-				var add_button      = $("#add"); //Add button ID
-				
-				var x = 1; //initlal text box count
-				$(add_button).click(function(e){ 
-					e.preventDefault();
-					if(x < max_fields){ //max input box allowed
-						x++; //text box increment
-						$(wrapper).append(`<div class="form-row col-md-12 subjects">
-													<div class="col-md-4 col-sm-4">
-														<div class="form-group mb-2">
-															<label for="hs-sub6-mark">20.a. Subject${x} Name</label>
-															<input name="subject_name[]" type="text" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub6--mark">20.b. Full Mark </label>
-															<input name="full_marks[]" type="text" class="form-control">
-														</div>
-													</div>
-													<div class="col-md-2 col-sm-2 col-xs-6">
-														<div class="form-group mb-2">
-															<label for="hs-sub6-mark">20.c. Mark Scrored</label>
-															<input name="marks_scored[]" type="text" class="form-control">
-														</div>
-													</div>
-													<button class="remove_field btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-												</div>`); //add input box
-					}
-				});
-				
-				$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-					e.preventDefault(); $(this).parent('div').remove(); x--;
-				})
-
-				// var i = 1;
-				
-			});
-
-			function myFunction() {
-				// Get the checkbox
-				var checkBox = document.getElementById("myCheck");
-				// Get the output text
-				var text = document.getElementById("text");
-
-				// If the checkbox is checked, display the output text
-				if (checkBox.checked == true){
-					text.style.display = "block";
-				} else {
-					text.style.display = "none";
-				}
-				}
-
-				function myTest() {
-				// Get the checkbox
-				var checkBox = document.getElementById("myCheck");
-				// Get the output text
-				var text = document.getElementById("text");
-
-				// If the checkbox is checked, display the output text
-				if (checkBox.checked == true){
-					text.style.display = "block";
-				} else {
-					text.style.display = "none";
-				}
-				}				
-
-		</script>
+		@include('web.admsn_script.admsn_script');
 	@endsection

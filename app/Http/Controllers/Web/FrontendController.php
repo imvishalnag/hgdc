@@ -9,6 +9,7 @@ use DB;
 use Carbon\Carbon;
 use Auth;
 use Hash;
+use App\Helper\SmsSend;
 class FrontendController extends Controller
 {
     public function login()
@@ -18,6 +19,7 @@ class FrontendController extends Controller
   
     public function sendOtp(Request $request)
     {
+        
         if($request->ajax()){
             $mobile = $request->input('query');
             $otp = $this->generateNumericOTP(4);
@@ -32,8 +34,9 @@ class FrontendController extends Controller
                         'updated_at' => Carbon::now()->setTimezone('Asia/Kolkata')->toDateTimeString(),
                     ]);
                     if($user){
-                        $html = "<h4>Your OTP is ".$otp."</h4>";
-                       echo $html;
+                        $html = "Your OTP is ".$otp."";
+                        SmsSend::smsSendTo($mobile,$html);
+                        echo "Otp Send Successfully to Your Mobile Number";
                     }else{
                         return 1;
                     }

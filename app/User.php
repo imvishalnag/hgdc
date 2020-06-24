@@ -43,6 +43,16 @@ class User extends Authenticatable
     
     public function honors()
     {
-        return $this->hasMany('App\HonoursSujbect', 'user_id', 'id');
+        return $this->hasOne('App\HonoursSujbect', 'user_id', 'id');
+    }
+
+    public function Compulsory()
+    {
+        return $this->hasMany('App\Compulsory', 'user_id', 'id');
+    }
+
+    public function regulatSubject()
+    {
+        return $this->hasMany('App\RegularSubject', 'user_id', 'id');
     }
 }

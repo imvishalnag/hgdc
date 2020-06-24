@@ -25,37 +25,44 @@ class StudentDashboardController extends Controller
 
     public function store(Request $request)
     {
-        // $this->validate($request, [
-            // 'name'              => 'required',
-        //     'dob'               => 'required',
-        //     'gender'            => 'required',
-        //     'f_name'            => 'required',
-        //     'f_occupation'      => 'required',
-        //     'm_name'            => 'required',
-        //     'm_occupation'      => 'required',
-        //     'nationality'       => 'required',
-        //     'religion'          => 'required',
-        //     'material'          => 'required',
-        //     'cast'              => 'required',
-        //     'p_address'         => 'required',
-        //     'village'           => 'required',
-        //     'po'                => 'required',
-        //     'dist'              => 'required',
-        //     'pin'               => 'required|numeric|min:6',
-        //     'hslc_board'        => 'required',
-        //     'hslc_yr'           => 'required',
-        //     'hslc_roll'         => 'required',
-        //     'hslc_div'          => 'required',
-        //     'hslc_school'       => 'required',
-        //     'hs_board'          => 'required',
-        //     'hs_year'           => 'required',
-        //     'hs_roll'           => 'required',
-        //     'hs_div'            => 'required',
-        //     'hs_school'         => 'required',
-        //     'sign'              => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024', 
-        //     'photo'             => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        // ]);
-       
+        $this->validate($request, [
+            'name' => 'required',
+            'dob' => 'required',
+            'gender' => 'required',
+            'f_name' => 'required',
+            'm_name' => 'required',
+            'nationality' => 'required',
+            'religion' => 'required',
+            'material' => 'required',
+            'caste' => 'required',
+            'p_address' => 'required',
+            'village' => 'required',
+            'po' => 'required',
+            'dist' => 'required',
+            'pin' => 'required|numeric|min:6',
+            'hslc_board' => 'required',
+            'hslc_yr' => 'required',
+            'hslc_roll' => 'required',
+            'hslc_div'  => 'required',
+            'hslc_school' => 'required',
+            'hs_board' => 'required',
+            'hs_year' => 'required',
+            'hs_roll' => 'required',
+            'hs_div' => 'required',
+            'hs_school' => 'required',            
+            'hs_marksheet' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024', 
+            'hs_certificate' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'caste_certificate' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024', 
+            'sign' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024', 
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
+
+        if($request->input('course-type') == 'h_course'){
+            if($request->input('honors') == $request->input('honors_other')){
+                return back()->with('error', 'Honours Subject can\'t be same with Honours Generic Subjects!');
+            }
+        }
+
         $user = User::find(Auth::user()->id);
         $user->name = $request->input('name');
         $user->dob = $request->input('dob');
@@ -70,8 +77,15 @@ class StudentDashboardController extends Controller
         $user->caste = $request->input('caste');
         $user->p_address = $request->input('p_address');
         $user->village = $request->input('village');
+        $user->dist = $request->input('dist');
         $user->po = $request->input('po');
         $user->pin = $request->input('pin');
+        if ($request->input('l_guardian') == 'yes') {            
+            $user->legal_guardian_status = '2';
+        } else {            
+            $user->legal_guardian_status = '1';
+        }
+        
         $user->g_name = $request->input('g_name');
         $user->g_relation = $request->input('g_relation');
         $user->l_pincode = $request->input('l_pincode');
@@ -86,7 +100,39 @@ class StudentDashboardController extends Controller
         $user->hs_div = $request->input('hs_div');
         $user->hs_school = $request->input('hs_school');
         $user->t_mark = $request->input('t_mark');
-     
+            
+        if($request->hasfile('hs_certificate'))
+        {
+            $image = $request->file('hs_certificate');
+            $destination = base_path().'/public/admin/student/';
+            $image_extension = $image->getClientOriginalExtension();
+            $hs_certificate = md5(date('now').time()).uniqid().".".$image_extension;
+            $original_path = $destination.$hs_certificate;
+            Image::make($image)->save($original_path);
+            $user->hs_certificate = $hs_certificate;
+        }
+
+        if($request->hasfile('hs_marksheet'))
+        {
+            $image = $request->file('hs_marksheet');
+            $destination = base_path().'/public/admin/student/';
+            $image_extension = $image->getClientOriginalExtension();
+            $hs_marksheet = md5(date('now').time()).uniqid().".".$image_extension;
+            $original_path = $destination.$hs_marksheet;
+            Image::make($image)->save($original_path);
+            $user->hs_marksheet = $hs_marksheet;
+        }
+
+        if($request->hasfile('caste_certificate'))
+        {
+            $image = $request->file('caste_certificate');
+            $destination = base_path().'/public/admin/student/';
+            $image_extension = $image->getClientOriginalExtension();
+            $caste_certificate = md5(date('now').time()).uniqid().".".$image_extension;
+            $original_path = $destination.$caste_certificate;
+            Image::make($image)->save($original_path);
+            $user->caste_certificate = $caste_certificate;
+        }
         
         
         if($request->hasfile('photo'))
@@ -94,13 +140,10 @@ class StudentDashboardController extends Controller
             $image = $request->file('photo');
             $destination = base_path().'/public/admin/student/';
             $image_extension = $image->getClientOriginalExtension();
-            $photo = md5(date('now').time()).".".$image_extension;
+            $photo = md5(date('now').time()).uniqid().".".$image_extension;
             $original_path = $destination.$photo;
             Image::make($image)->save($original_path);
-            $thumb_path = base_path().'/public/admin/student/'.$photo;
-            Image::make($image)
-            ->resize(300, 400)
-            ->save($thumb_path);
+           
             $user->photo = $photo;
         }
         if($request->hasfile('sign'))
@@ -108,13 +151,9 @@ class StudentDashboardController extends Controller
             $image = $request->file('sign');
             $destination = base_path().'/public/admin/student/';
             $image_extension = $image->getClientOriginalExtension();
-            $sign = md5(date('now').time()).".".$image_extension;
+            $sign = md5(date('now').time()).uniqid().".".$image_extension;
             $original_path = $destination.$sign;
             Image::make($image)->save($original_path);
-            $thumb_path = base_path().'/public/admin/student/'.$sign;
-            Image::make($image)
-            ->resize(300, 400)
-            ->save($thumb_path);
             $user->sign = $sign;
         }
         $user->status = "2";
@@ -132,31 +171,45 @@ class StudentDashboardController extends Controller
             ];
         }
 
+        if ($request->input('course-type') == 'h_course') {
+            $user->course_status = '1';
+        } elseif ($request->input('course-type') == 'r_course') {
+            $user->course_status = '2';
+        }
+        
+
         if($user->save()){
             $subjects = DB::table('subjects')
             ->insert($subjects);
                 // Subject Selection in Honours
             if($request->input('course-type') == 'h_course'){
-                if($request->input('honors') == $request->input('honors_other')){
-                    return back()->with('error', 'Honours Subject can\'t be same with Honours Generic Subjects!');
-                }else{
                 $user_honors_subject = new HonoursSujbect;
                 $user_honors_subject->user_id = Auth::user()->id;
                 $user_honors_subject->honors = $request->input('honors');
                 $user_honors_subject->honors_other = $request->input('honors_other');
                 if($user_honors_subject->save()){
                     // Compulsory
-                        $compulsory_subject = new Compulsory;
-                        $compulsory = $request->input('compulsory');
-                        $id = Auth::user()->id;
-                        for ($i = 0; $i < count($compulsory); $i++) {
+                    $compulsory_subject = new Compulsory;
+                    $compulsory = $request->input('compulsory');
+                    $id = Auth::user()->id;
+                    for ($i = 0; $i < count($compulsory); $i++) {
+                        if ($compulsory[$i] == 'MIL') {
                             $dataSet[] = [
                                 'user_id' => $id,
                                 'compulsory_subject' => $compulsory[$i],
+                                'language' => $request->input('mil_language'),
+                            ];
+                        } else {
+                            $dataSet[] = [
+                                'user_id' => $id,
+                                'compulsory_subject' => $compulsory[$i],
+                                'language' =>null,
                             ];
                         }
-                        Compulsory::insert($dataSet);
-                 }
+                        
+                        
+                    }
+                    Compulsory::insert($dataSet);
                 }
             }else if($request->input('course-type') == 'r_course'){
                 $user_regular_subject = new RegularSubject;
@@ -171,18 +224,24 @@ class StudentDashboardController extends Controller
                 }
                     RegularSubject::insert($dataSet);
                     $compulsory_subject = new Compulsory;
-                    $compulsory_subject->user_id = Auth::user()->id;
+                    $id = Auth::user()->id;
+
                     $compulsory = $request->input('compulsory1');
-                    if($request->input('mil_chk')){
-                        $compulsory_subject->compulsory_subject = $request->input('compulsory1');
-                    }
-                    $compulsory_subject->compulsory_subject = $request->input('compulsory1');
                     $data = [];
                     for ($i = 0; $i < count($compulsory); $i++) {
-                        $data[] = [
-                            'user_id' => $id,
-                            'compulsory_subject' => $compulsory[$i],
-                        ];
+                        if ($compulsory[$i] == 'MIL') {
+                            $data[] = [
+                                'user_id' => $id,
+                                'compulsory_subject' => $compulsory[$i],
+                                'language' => $request->input('mil_language'),
+                            ];
+                        } else {
+                            $data[] = [
+                                'user_id' => $id,
+                                'compulsory_subject' => $compulsory[$i],
+                                'language' =>null,
+                            ];
+                        } 
                     }
                    Compulsory::insert($data);
             }
