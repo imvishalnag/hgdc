@@ -8,15 +8,15 @@
     <div class="row tile_count">
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-users"></i> Total Students</span>
-        <div class="count">10</div>
+        <div class="count">{{$user_count}}</div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-briefcase"></i>Total Gallery Images</span>
-        <div class="count">10</div>
+        <div class="count">{{$gallery_count}}</div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-rupee"></i> Total Notifications</span>
-        <div class="count">10</div>
+        <div class="count">{{$notification_count}}</div>
       </div>
     </div>
     

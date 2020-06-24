@@ -5,15 +5,20 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Gallery;
+use App\Notification;
 use DataTables;
 class AdminDashboardController extends Controller
 {
    
 
     public function index()
-    {     
+    {   
+        $user_count = User::where('status', 2)->count();
+        $gallery_count = Gallery::count();
+        $notification_count = Notification::count();
         $user = User::where('status', 2)->orderBy('created_at', 'DESC')->limit(10)->get();
-        return view('admin.dashboard',compact('user'));
+        return view('admin.dashboard',compact('user','user_count','gallery_count','notification_count'));
     }
 
     public function studentListTable()
