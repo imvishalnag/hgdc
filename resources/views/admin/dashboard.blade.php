@@ -6,32 +6,33 @@
   <div class="right_col" role="main">
     <!-- top tiles -->
     <div class="row tile_count">
-      <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-users"></i> Total Students</span>
-        <div class="count">878</div>
+        <div class="count">10</div>
       </div>
-      <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-briefcase"></i>Total Gallery Images</span>
-        <div class="count">878</div>
+        <div class="count">10</div>
       </div>
-      <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-rupee"></i> Total Notifications</span>
-        <div class="count">87978</div>
+        <div class="count">10</div>
       </div>
     </div>
     
     <!-- /top tiles -->
     <br />
     <div class="table-responsive">
+      <h3>Last Ten Registered Students</h3>
       <table class="table table-striped jambo_table bulk_action">
           <thead>
               <tr class="headings">                
                   <th class="column-title">Sl No. </th>
-                  <th class="column-title">Member ID</th>
-                  <th class="column-title">Member Name</th>
-                  <th class="column-title">Document Verify</th>
-                  <th class="column-title">Document Status</th>
-                  <th class="column-title">Status</th>
+                  <th class="column-title">Student ID</th>
+                  <th class="column-title">Name</th>
+                  <th class="column-title">Mobile Number</th>
+                  <th class="column-title">Course Type</th>
+                  <th class="column-title">Date</th>
               </tr>
           </thead>
 

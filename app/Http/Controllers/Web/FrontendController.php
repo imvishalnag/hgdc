@@ -42,15 +42,16 @@ class FrontendController extends Controller
                     }
                }else{
                     $user = new User;
-                    $last_student = User::all()->last()->id;
-                    $generatedID = $this->studentIDGeneration($last_student);
-                    $user->student_id = $generatedID;
                     $user->mobile = $mobile;
                     $user->password = Hash::make($password);
                     $user->status = '1';
                     if($user->save()){
-                       $html = "<h4>Your OTP is ".$otp."</h4>";
-                       echo $html;
+                        
+                        $generatedID = $this->studentIDGeneration($user->id);
+                        User::Where('id',$user->id)->update(['student_id'=>$generatedID]);
+                        $html = "Your OTP is ".$otp."";
+                        SmsSend::smsSendTo($mobile,$html);
+                        echo "Otp Send Successfully to Your Mobile Number";
                     }else{
                        return 1;
                     }
