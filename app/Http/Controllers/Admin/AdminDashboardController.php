@@ -28,7 +28,7 @@ class AdminDashboardController extends Controller
 
     public function studentList()
     {
-        return datatables()->of(User::where('status', 2)->orderBy('created_at', 'DESC')->get())
+        return datatables()->of(User::where('status', 2)->orderBy('id', 'DESC')->get())
         ->addIndexColumn()
         ->addColumn('action', function($row){
             $btn = '<a href="'.route('admin.show', ['id' => encrypt($row->id)]).'" class="btn btn-primary">View</a>
