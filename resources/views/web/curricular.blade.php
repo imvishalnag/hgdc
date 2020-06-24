@@ -126,7 +126,7 @@
 							<div class="classes-details mb-5">
 								<div class="dlab-post-text"><p class="m-0"><strong>* Free Admission for all student : As per Govt. rule <img src="images/new-1.gif" alt="" width="30" height="14"></strong></p>
 								</div>
-								<a href="{{route('web.admission')}}" class="btn btn-sm">Click her to fill form</a>
+								<a href="{{route('web.admission')}}" class="btn btn-sm">Click here to fill form</a>
 							</div>
 						</div>
 					</div>

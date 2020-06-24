@@ -406,9 +406,14 @@
 															<input name="marks_scored[]" type="text" class="form-control" required>
 														</div>
 													</div>
-													<button type="button" class="btn btn-primary btn-sm" id="add"> 
-														<i class="fa fa-plus"></i>
-													</button>
+													<div class="col-md-2 col-sm-2 col-xs-6">
+														<div class="form-group mb-2">
+															<br>
+															<button type="button" class="btn btn-primary btn-sm mt-3" id="add"> 
+																<i class="fa fa-plus"></i>
+															</button>
+														</div>
+													</div>
 												</div>
 												<div class="form-row col-md-12">
 													<div class="col-md-4 col-sm-4">
@@ -500,25 +505,26 @@
 															<label for="name">22.b. Compulsory Subject <span style="color:red"><b> * </b></span></label>											
 															<div class="form-group">
 																<span class="CKRD">
-																	<input name="compulsory1[]" type="checkbox" checked disabled>English &nbsp;</span>
-																	<input type="hidden" name="compulsory1[]" value="English">
-																	<span class="CKRD"><input name="compulsory1[]" type="checkbox" checked disabled>Enviromental Studies &nbsp;</span>
+																	<input name="compulsory1[]" type="checkbox" checked disabled>English &nbsp;
+																</span>
+																<input type="hidden" name="compulsory1[]" value="English">
 
-																	<input type="hidden" name="compulsory1[]" value="Environmental Studies">
-																	<span class="CKRD">
-																		<input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="English Communication" onclick="getCheckedGroupBoxes('English Communication')">English Communication &nbsp;
-																	</span>
+																<span class="CKRD">
+																	<input name="compulsory1[]" type="checkbox" checked disabled>Enviromental Studies &nbsp;
+																</span>
+																<input type="hidden" name="compulsory1[]" value="Environmental Studies">
 
-																	<span class="CKRD">
-																		<input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="MIL" onclick="getCheckedGroupBoxes('MIL')">MIL &nbsp;
-																	</span>
-																	<span class="CKRD" style="display: none" id="mil_div">
-																		
-																	</span>
+																<span class="CKRD">
+																	<input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="English Communication" onclick="getCheckedGroupBoxes('English Communication')">English Communication &nbsp;
+																</span>
 
-															</div>	
-															
-
+																<span class="CKRD">
+																	<input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="MIL" onclick="getCheckedGroupBoxes('MIL')">MIL &nbsp;
+																</span>
+																<span class="CKRD" style="display: none" id="mil_div">
+																	
+																</span>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -528,7 +534,7 @@
 													<hr>
 													<h5>Upload required documents</h5>
 												</div>
-												<div class="col-md-6 col-sm-6">
+												<div class="col-md-4 col-sm-4">
 													<div class="form-group">
 														<label for="name"> H.S. Marksheet<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
 														<input name="hs_marksheet" type="file" class="form-control" required>
@@ -540,7 +546,7 @@
 													</div>
 												</div>
 
-												<div class="col-md-6 col-sm-6">
+												<div class="col-md-4 col-sm-4">
 													<div class="form-group">
 														<label for="name">H.S. Certificate<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
 														<input name="hs_certificate" type="file" class="form-control" required>
@@ -552,7 +558,7 @@
 													</div>
 												</div>
 
-												<div class="col-md-6 col-sm-6">
+												<div class="col-md-4 col-sm-4">
 													<div class="form-group">
 														<label for="name">Caste Certificate (if Applicable)<b style="color:red; font-weight:500;">(less than 1MB)</b> </label>
 														<input name="caste_certificate" type="file" class="form-control">
@@ -563,7 +569,6 @@
 														@enderror
 													</div>
 												</div>
-												<div class="col-md-6 col-sm-6"></div>
 
 												<div class="col-md-6 col-sm-6">
 													<div class="form-group">
@@ -613,5 +618,5 @@
 	@endsection
 	
 	@section('script') 
-		@include('web.admsn_script.admsn_script');
+		@include('web.admsn_script.admsn_script')
 	@endsection

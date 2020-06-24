@@ -7,6 +7,9 @@
     @endsection
 
     @section('content')
+        <div class="bio">
+            <a href="{{Auth::user() ? route('web.admission') : route('web.login')}}" class="text-moving">Free Admission 3 year TDS Arts Course. click here</a>
+        </div>
         <div class="page-content bg-white pb-0">
             <!-- Slider Banner -->
             <!-- Main Slider -->
@@ -59,6 +62,12 @@
                             <div class="col-md-2">
                                 <div class="courses-bx">
                                     <h5>Department</h5>
+                                    <h2 class="title">English</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="courses-bx">
+                                    <h5>Department</h5>
                                     <h2 class="title">Economics</h2>
                                 </div>
                             </div>
@@ -77,12 +86,6 @@
                             <div class="col-md-2">
                                 <div class="courses-bx">
                                     <h5>Department</h5>
-                                    <h2 class="title">English</h2>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="courses-bx">
-                                    <h5>Department</h5>
                                     <h2 class="title">Pholosophy</h2>
                                 </div>
                             </div>
@@ -95,9 +98,9 @@
                         <div class="row align-items-center about-bx2">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="about-box">
-                                    <h3 class="title"> Principal Note</h3>
+                                    <h3 class="title"> Principal's Coloumn</h3>
                                     <p class="ext"><img class="princ" src="{{asset('web/images/principal.jpg')}}"> Hari-Gayatri Das College is a degree college affiliated to the Gauhati University. It was a dream of our founding fathers to impart quality higher education among the people of greater Azara area and accordingly, they fulfilled their dream through establishment of this institution in the year 1996. Since then the college is striving for its development. Presently we have a good number of students with a brilliant academic staff.</p>
-                                    <p class="ext">Dear Learner, present age is an age of quality higher education. Quality makes the knowledge relevant to individual and social needs. Quality education is required to enable persons, societies and nations to acquire the skills and competencies required for living meaningfully in a competitive, globalized world.There is no higher secondary classes in this College. The enrolment resonable. One to one contact is quite possible here which is a pre-condition for quality education. Therefore, thirst for knowledge and building a knowledge society has become a major concern of every institution of higher learning. Keeping in view, our institution intends to provide quality higher education for entire students, so that they can survive in the competitive job market and build moral character to make our society a peaceful, stable and civilized one. It is said that, knowledge without moral and ethical dimension is of no value. But there is a general view that higher education in India has deteriorated in terms of quality and social relevance. The quantitative expansion of higher education is accompanied by qualitative deterioration.<p>
+                                    <p class="ext">Dear Learner, present age is an age of quality higher education. Quality makes the knowledge relevant to individual and social needs. Quality education is required to enable persons, societies and nations to acquire the skills and competencies required for living meaningfully in a competitive, globalized world.There is no higher secondary classes in this College. The enrolment resonable. One to one contact is quite possible here which is a pre-condition for quality education. Therefore, thirst for knowledge and building a knowledge society has become a major concern of every institution of higher learning. Keeping in view, our institution intends to provide quality higher education for entire students, so that they can survive in the competitive job market and build moral character to make our society a peaceful, stable and civilized one. It is said that, knowledge without moral and ethical dimension is of no value. But there is a general view that higher education in India has deteriorated in terms of quality and social relevance. The quantitative expansion of higher education is accompanied by qualitative deterioration globalizal world. Hari-Gayatri Das College has been imparting quantity education since its inception. The student get emple scope hence to develop their personlity.<p>
                                     <p class="ext">Last, by this message I appeal all of you to co-operate with us in a new outlook to achieve self-sufficiency and make this institution a remarkable one. </p>
                                     <div class="princ-name">
                                         <h5 class="m-t0 m-b5">Prof. Arun Ch. Sarma</h5>
@@ -120,7 +123,7 @@
                                     <div class="action-area">
                                         <img src="{{asset('web/images/emblem.png')}}" class="emblem">
                                         <p class="text-justify" style="color: #243529;">
-                                            Hari-Gayatri Das College is a degree college affiliated to the Gauhati University. It was a dream of our founding fathers to impart quality higher education among the people of greater Azara area and accordingly, they fulfilled their dream through establishment of this institution in the year 1996. Since then the college is striving for its development. Presently we have a good number of students with a brilliant academic staff.
+                                        Hari-Gayatri Das College is a degree college affiliated to the Gauhati University and concurred by the govt. of Assam. The college was established to impart quality education to it's students, so that they can face the real life situations. It's situated by the National Highway No. 31 and it is only 8 KMs away from Gauhati University. All the possible steps are taken for the all round development of the students. Admission is restricted to 150 students in B.A first semester to keep healthy educational environment.
                                         </p>
                                     </div>
                                 </div>

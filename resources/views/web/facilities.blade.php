@@ -51,7 +51,7 @@
 										The college has indoor and outdoor sports facilities and equipments for different out door and indoor games.</p></li>
 
 										<li class="m-3 text-justify"><p> <strong>Drinking Water : </strong> <br>
-										The College has a purified and cold frinking water system for staff and student.</p></li>
+										The College has a purified and cold frinking water system for staff and students.</p></li>
 
 										<li class="m-3 text-justify"><p> <strong>Free Education : </strong> <br>
 										A number of poor students are given free education on the basis of merit. Special coaching is also provided to needy students. This year the College decides to admit poor students for free education in BA 1st year class. They need not pay college admission fee, tution fee etc.</p></li>

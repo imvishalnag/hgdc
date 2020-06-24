@@ -41,8 +41,8 @@
 								<div class="client-box mb-5">
 									<div class="testimonial-text">
 										<p class="text-justify">
-											<i class="media1 float-right"><img src="images/gallery/pic3.jpg" alt=""> </i>
-											Hari-Gayatri Das College (Formerly Azara College) situated at Azara, a co-educational institution of higher learning was established on 213 August, 1996. A group of dedicated people of the locality covering the area Azara, Mirzapur, Rani, Patgaon, Chakardeo etc. with relentless and untiring efforts has established this Institution to provide quality higher education. Later a prominent person & a social worker of the locality Sjt. Harichandra Das donated 3 bigha land and a two storied R.C.C. College building on 313' March, 2004. The college was renamed as "Hari-Gayatri Das College" after the name of Sjt. Harichandra Das and his wife Smt. Gayatri Das as a gesture of gratitude.
+											<i class="media1 float-right" style="width:23%"><img src="{{asset('web/images/banner/about.jpg')}}" style="width:100%"> </i>
+											Hari-Gayatri Das College (Formerly Azara College) situated at Azara, a co-educational institution of higher learning was established on 21 August, 1996. A group of dedicated people of the locality covering the area Azara, Mirzapur, Rani, Patgaon, Chakardeo etc. with relentless and untiring efforts has established this Institution to provide quality higher education. Later a prominent person & a social worker of the locality Sjt. Harichandra Das donated 3 bigha land and a two storied R.C.C. College building on 31' March, 2004. The college was renamed as "Hari-Gayatri Das College" after the name of Sjt. Harichandra Das and his wife Smt. Gayatri Das as a gesture of gratitude.
 										</p>
 									</div>
 								</div>

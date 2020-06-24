@@ -91,7 +91,12 @@
                                                     <input name="marks_scored[]" type="text" class="form-control" required>
                                                 </div>
                                             </div>
-                                            <button class="remove_field btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                            <div class="col-md-2 col-sm-2 col-xs-6 remove_field">
+                                                <div class="form-group mb-2 mt-3">
+                                                    <br>
+                                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                            </div>
                                         </div>`); //add input box
             }
         });

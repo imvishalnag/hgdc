@@ -429,7 +429,7 @@
 												@if (!empty($user->hs_certificate))	
 													<div class="col-md-6">
 														<div class="form-group" style="text-align: center;">
-															<p style="font-size: 26px;font-weight: 600;text-align: center;">Hs Marksheet</p>
+															<p style="font-size: 26px;font-weight: 600;text-align: center;">Hs Certificate</p>
 															<img src="{{asset('admin/student/'.$user->hs_certificate.'')}}" alt="">
 														</div>
 													</div>
@@ -437,7 +437,7 @@
 												@if (!empty($user->caste_certificate))	
 													<div class="col-md-6">
 														<div class="form-group" style="text-align: center;">
-															<p style="font-size: 26px;font-weight: 600;text-align: center;">Hs Marksheet</p>
+															<p style="font-size: 26px;font-weight: 600;text-align: center;">Caste </p>
 															<img src="{{asset('admin/student/'.$user->caste_certificate.'')}}" alt="">
 														</div>
 													</div>
@@ -445,7 +445,7 @@
 												@if (!empty($user->photo))	
 													<div class="col-md-6">
 														<div class="form-group" style="text-align: center;">
-															<p style="font-size: 26px;font-weight: 600;text-align: center;">Hs Marksheet</p>
+															<p style="font-size: 26px;font-weight: 600;text-align: center;">Photo</p>
 															<img src="{{asset('admin/student/'.$user->photo.'')}}" alt="">
 														</div>
 													</div>
@@ -453,7 +453,7 @@
 												@if (!empty($user->sign))	
 													<div class="col-md-6">
 														<div class="form-group" style="text-align: center;">
-															<p style="font-size: 26px;font-weight: 600;text-align: center;">Hs Marksheet</p>
+															<p style="font-size: 26px;font-weight: 600;text-align: center;">Student Sign</p>
 															<img src="{{asset('admin/student/'.$user->sign.'')}}" alt="">
 														</div>
 													</div>

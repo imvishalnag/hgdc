@@ -8,6 +8,8 @@ use App\User;
 use DataTables;
 class AdminDashboardController extends Controller
 {
+   
+
     public function index()
     {     
         $user = User::where('status', 2)->orderBy('created_at', 'DESC')->limit(10)->get();
@@ -40,8 +42,8 @@ class AdminDashboardController extends Controller
         }catch(DecryptException $e) {
             return redirect()->back();
         }
-        $single_student = User::where('id', $id)->first();
-        return view('admin.show', compact('single_student'));
+        $user = User::with(['subjects', 'honors'])->where('id', $id)->first();
+        return view('admin.show', compact('user'));
     }
 
     public function edit($aId)

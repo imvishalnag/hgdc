@@ -92,8 +92,6 @@
 									<form id="frm-logout" action="{{ route('web.logout') }}" method="POST" style="display: none;">
 										{{ csrf_field() }}
 									</form>
-								@else
-									<a href="{{route('web.teacher')}}">Faculty </a>
 								@endif
 							</li>
 							<li class="active spl" style="background: #fff;"><a href="{{Auth::user() ? route('web.admission') : route('web.login')}}">Online Admission</a></li>
@@ -105,16 +103,3 @@
         <!-- main header END -->
     </header>
     <!-- header END -->
-	<!-- <div class="action-area marquee-head marquee">
-		<ul>
-			<li><a href="courses-details.html">RESULT OF SSC CGL 2020 (TIER-3)</a></li>
-			<li><a href="courses-details.html">SSC CGL 2020 PRE Application Status</a></li>
-			<li><a href="courses-details.html">SSC CHSL 2020 Result Declared</a></li>
-			<li><a href="courses-details.html">RESULT OF SSC CGL 2020 (TIER-3)</a></li>
-			<li><a href="courses-details.html">SSC CGL 2020 PRE Application Status</a></li>
-			<li><a href="courses-details.html">SSC CHSL 2020 Result Declared</a></li>
-			<li><a href="courses-details.html">RESULT OF SSC CGL 2020 (TIER-3)</a></li>
-			<li><a href="courses-details.html">SSC CGL 2020 PRE Application Status</a></li>
-			<li><a href="courses-details.html">SSC CHSL 2020 Result Declared</a></li>
-		</ul>
-	</div> -->
