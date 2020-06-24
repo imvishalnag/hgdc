@@ -37,200 +37,31 @@
 					<div class="row">
 						<div class="clearfix col-md-12 p-lr0" id="lightgallery">
 							<ul id="masonry" class="dlab-gallery-listing gallery-grid-4 gallery">
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.6s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic3.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic3.jpg')}}" data-src="{{asset('web/images/gallery/pic3.jpg')}}" class="check-km" title="Image 3 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span> 
+								@if (isset($gallery) && !empty($gallery))
+									@foreach ($gallery as $item)
+									<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.6s">
+										<div class="dlab-box frame-box m-b30">
+											<div class="dlab-thum dlab-img-overlay1"> 
+												<a href="javascript:void(0);">
+													<img src="{{asset('gallery/thumb/'.$item->image.'')}}" alt="">
+												</a>
+												<div class="overlay-bx">
+													<div class="overlay-icon"> 
+														<span data-exthumbimage="{{asset('gallery/thumb/'.$item->image.'')}}" data-src="{{asset('gallery/'.$item->image.'')}}" class="check-km" title="Image 3 Title will come here">
+															<i class="fa fa-search icon-bx-xs"></i>
+														</span> 
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1 "> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic1.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic1.jpg')}}" data-src="{{asset('web/images/gallery/pic1.jpg')}}" class="check-km" title="Image 1 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic2.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic2.jpg')}}" data-src="{{asset('web/images/gallery/pic2.jpg')}}" class="check-km" title="Image 2 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic4.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic4.jpg')}}" data-src="{{asset('web/images/gallery/pic4.jpg')}}" class="check-km" title="Image 4 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span> 
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic5.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic5.jpg')}}" data-src="{{asset('web/images/gallery/pic5.jpg')}}" class="check-km" title="Image 5 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span>  
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn " data-wow-delay="0.6s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic6.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic6.jpg')}}" data-src="{{asset('web/images/gallery/pic6.jpg')}}" class="check-km" title="Image 6 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span> 
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1 "> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic1.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic1.jpg')}}" data-src="{{asset('web/images/gallery/pic1.jpg')}}" class="check-km" title="Image 7 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span> 
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic2.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic2.jpg')}}" data-src="{{asset('web/images/gallery/pic2.jpg')}}" class="check-km" title="Image 8 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span> 
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.6s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic3.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic3.jpg')}}" data-src="{{asset('web/images/gallery/pic3.jpg')}}" class="check-km" title="Image 9 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span> 
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic4.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic4.jpg')}}" data-src="{{asset('web/images/gallery/pic4.jpg')}}" class="check-km" title="Image 10 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span> 
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic5.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic5.jpg')}}" data-src="{{asset('web/images/gallery/pic5.jpg')}}" class="check-km" title="Image 11 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span> 
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn " data-wow-delay="0.6s">
-									<div class="dlab-box frame-box m-b30">
-										<div class="dlab-thum dlab-img-overlay1"> 
-											<a href="javascript:void(0);">
-												<img src="{{asset('web/images/gallery/pic6.jpg')}}" alt="">
-											</a>
-											<div class="overlay-bx">
-												<div class="overlay-icon"> 
-													<span data-exthumbimage="{{asset('web/images/gallery/pic6.jpg')}}" data-src="{{asset('web/images/gallery/pic6.jpg')}}" class="check-km" title="Image 12 Title will come here">
-														<i class="fa fa-search icon-bx-xs"></i>
-													</span> 
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
+									</li>
+									@endforeach
+								@endif
 							</ul>
 						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 book-mobile">
+							{!! $gallery->onEachSide(2)->links() !!}
+					  </div>
 					</div>
 				</div>
 			</div>

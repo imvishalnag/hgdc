@@ -44,7 +44,7 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 book-mobile">
                 {!! $gallery->onEachSide(2)->links() !!}
-        </div>
+          </div>
 
         </div>
       </div>

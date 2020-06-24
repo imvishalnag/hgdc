@@ -135,15 +135,22 @@
                                     </div>
                                     <div class="action-area marquee1">
                                         <ul>
-                                            <li><a href="courses-details.html">RESULT OF SSC CGL 2020 (TIER-3)<img src="{{asset('web/images/new-1.gif')}}" alt="" width="30" height="14"></a></li>
-                                            <li><a href="courses-details.html">SSC CGL 2020 PRE Application Status<img src="{{asset('web/images/new-1.gif')}}" alt="" width="30" height="14"></a></li>
-                                            <li><a href="courses-details.html">SSC CHSL 2020 Result Declared<img src="{{asset('web/images/new-1.gif')}}" alt="" width="30" height="14"></a></li>
-                                            <li><a href="courses-details.html">RESULT OF SSC CGL 2020 (TIER-3)</a></li>
-                                            <li><a href="courses-details.html">SSC CGL 2020 PRE Application Status</a></li>
-                                            <li><a href="courses-details.html">SSC CHSL 2020 Result Declared</a></li>
-                                            <li><a href="courses-details.html">RESULT OF SSC CGL 2020 (TIER-3)</a></li>
-                                            <li><a href="courses-details.html">SSC CGL 2020 PRE Application Status</a></li>
-                                            <li><a href="courses-details.html">SSC CHSL 2020 Result Declared</a></li>
+                                            @if (isset($notifications) && !empty($notifications))
+                                            @php
+                                                $count = 1;
+                                            @endphp
+                                                @foreach ($notifications as $item)
+                                                <li><a href="{{asset('notification/'.$item->pdf.'')}}" target="blank">{{$item->title}}
+                                                    @if ($count < 4)
+                                                        <img src="{{asset('web/images/new-1.gif')}}" alt="" width="30" height="14">
+                                                    @endif
+                                                </a></li>
+                                                @php
+                                                    $count = 1;
+                                                @endphp
+                                                @endforeach
+                                            @endif
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -176,150 +183,26 @@
                                     <div class="row">
                                         <div class="clearfix col-md-12 p-lr0" id="lightgallery">
                                             <ul id="masonry" class="dlab-gallery-listing gallery-grid-4 gallery">
-                                                <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                                                    <div class="dlab-box frame-box m-b30">
-                                                        <div class="dlab-thum dlab-img-overlay1 "> 
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{asset('web/images/gallery/pic1.jpg')}}" alt="">
-                                                            </a>
-                                                            <div class="overlay-bx">
-                                                                <div class="overlay-icon"> 
-                                                                    <span data-exthumbimage="{{asset('web/images/gallery/pic1.jpg')}}" data-src="{{asset('web/images/gallery/pic1.jpg')}}" class="check-km" title="Webinfotech">
-                                                                        <i class="fa fa-search icon-bx-xs"></i>
-                                                                    </span>
+                                                @if (isset($gallery) && !empty($gallery))
+                                                    @foreach ($gallery as $item)
+                                                    <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                                                        <div class="dlab-box frame-box m-b30">
+                                                            <div class="dlab-thum dlab-img-overlay1 "> 
+                                                                <a href="javascript:void(0);">
+                                                                    <img src="{{asset('gallery/thumb/'.$item->image.'')}}" alt="">
+                                                                </a>
+                                                                <div class="overlay-bx">
+                                                                    <div class="overlay-icon"> 
+                                                                        <span data-exthumbimage="{{asset('gallery/thumb/'.$item->image.'')}}" data-src="{{asset('gallery/'.$item->image.'')}}" class="check-km" title="Webinfotech">
+                                                                            <i class="fa fa-search icon-bx-xs"></i>
+                                                                        </span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </li>
-                                                <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                                                    <div class="dlab-box frame-box m-b30">
-                                                        <div class="dlab-thum dlab-img-overlay1"> 
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{asset('web/images/gallery/pic2.jpg')}}" alt="">
-                                                            </a>
-                                                            <div class="overlay-bx">
-                                                                <div class="overlay-icon"> 
-                                                                    <span data-exthumbimage="{{asset('web/images/gallery/pic2.jpg')}}" data-src="{{asset('web/images/gallery/pic2.jpg')}}" class="check-km" title="Image 2 Title will come here">
-                                                                        <i class="fa fa-search icon-bx-xs"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.6s">
-                                                    <div class="dlab-box frame-box m-b30">
-                                                        <div class="dlab-thum dlab-img-overlay1"> 
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{asset('web/images/gallery/pic3.jpg')}}" alt="">
-                                                            </a>
-                                                            <div class="overlay-bx">
-                                                                <div class="overlay-icon"> 
-                                                                    <span data-exthumbimage="{{asset('web/images/gallery/pic3.jpg')}}" data-src="{{asset('web/images/gallery/pic3.jpg')}}" class="check-km" title="Image 3 Title will come here">
-                                                                        <i class="fa fa-search icon-bx-xs"></i>
-                                                                    </span> 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                                                    <div class="dlab-box frame-box m-b30">
-                                                        <div class="dlab-thum dlab-img-overlay1"> 
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{asset('web/images/gallery/pic4.jpg')}}" alt="">
-                                                            </a>
-                                                            <div class="overlay-bx">
-                                                                <div class="overlay-icon"> 
-                                                                    <span data-exthumbimage="{{asset('web/images/gallery/pic4.jpg')}}" data-src="{{asset('web/images/gallery/pic4.jpg')}}" class="check-km" title="Image 4 Title will come here">
-                                                                        <i class="fa fa-search icon-bx-xs"></i>
-                                                                    </span> 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                                                    <div class="dlab-box frame-box m-b30">
-                                                        <div class="dlab-thum dlab-img-overlay1"> 
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{asset('web/images/gallery/pic5.jpg')}}" alt="">
-                                                            </a>
-                                                            <div class="overlay-bx">
-                                                                <div class="overlay-icon"> 
-                                                                    <span data-exthumbimage="{{asset('web/images/gallery/pic5.jpg')}}" data-src="{{asset('web/images/gallery/pic5.jpg')}}" class="check-km" title="Image 5 Title will come here">
-                                                                        <i class="fa fa-search icon-bx-xs"></i>
-                                                                    </span>  
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn " data-wow-delay="0.6s">
-                                                    <div class="dlab-box frame-box m-b30">
-                                                        <div class="dlab-thum dlab-img-overlay1"> 
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{asset('web/images/gallery/pic6.jpg')}}" alt="">
-                                                            </a>
-                                                            <div class="overlay-bx">
-                                                                <div class="overlay-icon"> 
-                                                                    <span data-exthumbimage="{{asset('web/images/gallery/pic6.jpg')}}" data-src="{{asset('web/images/gallery/pic6.jpg')}}" class="check-km" title="Image 6 Title will come here">
-                                                                        <i class="fa fa-search icon-bx-xs"></i>
-                                                                    </span> 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                                                    <div class="dlab-box frame-box m-b30">
-                                                        <div class="dlab-thum dlab-img-overlay1 "> 
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{asset('web/images/gallery/pic1.jpg')}}" alt="">
-                                                            </a>
-                                                            <div class="overlay-bx">
-                                                                <div class="overlay-icon"> 
-                                                                    <span data-exthumbimage="{{asset('web/images/gallery/pic1.jpg')}}" data-src="{{asset('web/images/gallery/pic1.jpg')}}" class="check-km" title="Image 7 Title will come here">
-                                                                        <i class="fa fa-search icon-bx-xs"></i>
-                                                                    </span> 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                                                    <div class="dlab-box frame-box m-b30">
-                                                        <div class="dlab-thum dlab-img-overlay1"> 
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{asset('web/images/gallery/pic2.jpg')}}" alt="">
-                                                            </a>
-                                                            <div class="overlay-bx">
-                                                                <div class="overlay-icon"> 
-                                                                    <span data-exthumbimage="{{asset('web/images/gallery/pic2.jpg')}}" data-src="{{asset('web/images/gallery/pic2.jpg')}}" class="check-km" title="Image 8 Title will come here">
-                                                                        <i class="fa fa-search icon-bx-xs"></i>
-                                                                    </span> 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="web design card-container col-lg-4 col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.6s">
-                                                    <div class="dlab-box frame-box m-b30">
-                                                        <div class="dlab-thum dlab-img-overlay1"> 
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{asset('web/images/gallery/pic3.jpg')}}" alt="">
-                                                            </a>
-                                                            <div class="overlay-bx">
-                                                                <div class="overlay-icon"> 
-                                                                    <span data-exthumbimage="{{asset('web/images/gallery/pic3.jpg')}}" data-src="{{asset('web/images/gallery/pic3.jpg')}}" class="check-km" title="Image 9 Title will come here">
-                                                                        <i class="fa fa-search icon-bx-xs"></i>
-                                                                    </span> 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                    </li>
+                                                    @endforeach
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>

@@ -457,12 +457,8 @@
 															<img src="{{asset('admin/student/'.$user->sign.'')}}" alt="">
 														</div>
 													</div>
-												@endif
-					
+												@endif					
 											</div>
-
-
-
 										</div>
 									</form>
 								</div>

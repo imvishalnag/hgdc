@@ -40,14 +40,13 @@
             </li>
             <li><a><i class="fa fa-shopping-cart"></i> Notifications <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="#">Add New Notification</a></li>
-                <li><a href="#">Notification List</a></li>
+                <li><a href="{{route('admin.add_notification_form')}}">Add New Notification</a></li>
+                <li><a href="{{route('admin.notification_list')}}">Notification List</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </div>
       <!-- /sidebar menu -->
-
     </div>
   </div>
