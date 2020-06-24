@@ -92,8 +92,6 @@
 									<form id="frm-logout" action="{{ route('web.logout') }}" method="POST" style="display: none;">
 										{{ csrf_field() }}
 									</form>
-								@else
-									<a href="{{route('web.teacher')}}">Faculty </a>
 								@endif
 							</li>
 							<li class="active spl" style="background: #fff;"><a href="{{Auth::user() ? route('web.admission') : route('web.login')}}">Online Admission</a></li>
