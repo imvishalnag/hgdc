@@ -79,12 +79,12 @@
 									<form method="post" class="dzForm col-md-12" action="#">
 										<input type="hidden" value="Contact" name="dzToDo">
 										<div class="row">
-											<div class="form-row col-md-10">
-												<div class="col-md-12 col-sm-12">
-													<h4 class="text-center" style="text-decoration: underline"> Three Year Degree Course (Arts) Admission Form</h4>
-													<h5> Applicant basic information </h5>
-												</div>
-												<div class="form-row col-md-12">
+											<div class="col-md-12 col-sm-12">
+												<h4 class="text-center" style="text-decoration: underline"> Three Year Degree Course (Arts) Admission Form</h4>
+												<h5> Applicant basic information </h5>
+											</div>
+											<div class="form-row col-md-12">
+												<div class="form-row col-md-10">
 													<div class="col-md-5 col-sm-5">
 														<div class="form-group">
 															<label for="name"> Applicant Name </label>
@@ -158,12 +158,18 @@
 														</div>
 													</div>
 												</div>
-												{{-- <div class="form-row col-md-2">
-													<div>
-														<img src="{{asset('admin/student/'.$user->photo)}}" alt=""><br>
-														<img class="pt-1" src="{{asset('admin/student/'.$user->sign)}}" alt="" >
+												<div class="form-row col-md-2">
+													<div style="display: grid;margin: 0 auto;">
+														@if (!empty($user->photo))	
+															<img src="{{asset('admin/student/'.$user->photo.'')}}" alt="" style="max-height: 110px;">
+														@endif
+														@if (!empty($user->sign))	
+															<img src="{{asset('admin/student/'.$user->sign.'')}}" alt="" style="max-height: 50px;">
+														@endif
+														{{-- <img src="{{asset('admin/student/'.$user->photo)}}" alt=""><br>
+														<img class="pt-1" src="{{asset('admin/student/'.$user->sign)}}" alt="" > --}}
 													</div>
-												</div> --}}
+												</div>
 											</div>
 											<div class="form-row col-md-12">
 												<div class="col-md-12 col-sm-12">
@@ -415,54 +421,33 @@
 												</div>
 												@endif
 											</div>
-
 											<hr>
 											<div class="form-row col-md-12">
 												@if (!empty($user->hs_marksheet))	
-													<div class="col-md-6">
+													<div class="col-md-4">
 														<div class="form-group" style="text-align: center;">
-															<p style="font-size: 26px;font-weight: 600;text-align: center;">Hs Marksheet</p>
+															<h5>Hs Marksheet</h5>
 															<img src="{{asset('admin/student/'.$user->hs_marksheet.'')}}" alt="">
 														</div>
 													</div>
 												@endif
 												@if (!empty($user->hs_certificate))	
-													<div class="col-md-6">
+													<div class="col-md-4">
 														<div class="form-group" style="text-align: center;">
-															<p style="font-size: 26px;font-weight: 600;text-align: center;">Hs Certificate</p>
+															<h5>Hs Certificate</h5>
 															<img src="{{asset('admin/student/'.$user->hs_certificate.'')}}" alt="">
 														</div>
 													</div>
 												@endif
 												@if (!empty($user->caste_certificate))	
-													<div class="col-md-6">
+													<div class="col-md-4">
 														<div class="form-group" style="text-align: center;">
-															<p style="font-size: 26px;font-weight: 600;text-align: center;">Caste </p>
+															<h5>Caste </h5>
 															<img src="{{asset('admin/student/'.$user->caste_certificate.'')}}" alt="">
 														</div>
 													</div>
-												@endif
-												@if (!empty($user->photo))	
-													<div class="col-md-6">
-														<div class="form-group" style="text-align: center;">
-															<p style="font-size: 26px;font-weight: 600;text-align: center;">Photo</p>
-															<img src="{{asset('admin/student/'.$user->photo.'')}}" alt="">
-														</div>
-													</div>
-												@endif
-												@if (!empty($user->sign))	
-													<div class="col-md-6">
-														<div class="form-group" style="text-align: center;">
-															<p style="font-size: 26px;font-weight: 600;text-align: center;">Student Sign</p>
-															<img src="{{asset('admin/student/'.$user->sign.'')}}" alt="">
-														</div>
-													</div>
-												@endif
-					
+												@endif					
 											</div>
-
-
-
 										</div>
 									</form>
 								</div>

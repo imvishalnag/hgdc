@@ -23,9 +23,9 @@
                         @foreach ($gallery as $item)
                         <div class="col-md-55">
                           <div class="thumbnail">
-                            <div class="image view view-first" style="height: 177px;">
+                            <div class="image view view-first">
                               <img style="width: 100%; display: block;" src="{{asset('gallery/thumb/'.$item->image.'')}}" alt="image" />
-                              <div class="mask" style="height: 177px;">
+                              <div class="mask">
                                 <div class="tools tools-bottom">
                                   <a href="{{route('admin.gallery_delete',['id'=>$item->id])}}"><i class="fa fa-times"></i></a>
                                 </div>

@@ -54,7 +54,7 @@ class AdminDashboardController extends Controller
             return redirect()->back();
         }
         
-        $single_student = User::where('id', $id)->first();
-        return view('admin.update', compact('single_student'));
+        $user = User::where('id', $id)->first();
+        return view('admin.update', compact('user'));
     }
 }

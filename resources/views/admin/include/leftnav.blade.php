@@ -1,19 +1,15 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
       <div class="navbar nav_title" style="border: 0;">
-        <a href="{{route('admin.dashboard')}}" class="site_title"><i class="fa fa-paw"></i> <span>HGDC</span></a>
+        <a href="{{route('admin.dashboard')}}" class="site_title"><img src="{{asset('web/images/logo/logo.png')}}" style="width:100%"></a>
       </div>
 
       <div class="clearfix"></div>
 
       <!-- menu profile quick info -->
       <div class="profile clearfix">
-        <div class="profile_pic">
-          <img src="{{asset('admin/production/images/img.jpg')}}" alt="..." class="img-circle profile_img">
-        </div>
-        <div class="profile_info">
-          <span>Welcome,</span>
-          <h2>{{Auth::user()->name}}</h2>
+        <div class="profile_info text-center" style="width: 100%">
+          <h2><span>Welcome,</span> {{Auth::user()->name}}</h2>
         </div>
       </div>
       <!-- /menu profile quick info -->

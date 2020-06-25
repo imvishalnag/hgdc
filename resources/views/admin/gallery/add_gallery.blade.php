@@ -22,7 +22,7 @@
                 <div class="panel-body table-responsive">
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <label for="application_no">Select Image</label>
+                            <label for="application_no">Select Image (600x472 px)</label>
                             <input type="file"  class="form-control" name="image" required>
                         </div>                  
                     </div>
