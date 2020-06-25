@@ -21,6 +21,9 @@ Route::post('/admin/logout', 'Admin\AdminLoginController@logout')->name('admin.l
 
 // Admin Dashboard
 Route::group(['middleware'=>'auth:admin','prefix'=>'admin','namespace'=>'Admin'],function(){
+    Route::get('/change/password/form', 'AdminDashboardController@changePasswordForm')->name('admin.change_password_form');
+    Route::post('/change/password', 'AdminDashboardController@changePassword')->name('admin.change_password');
+
     Route::get('/dashboard', 'AdminDashboardController@index')->name('admin.dashboard');
     Route::get('/student/list/table', 'AdminDashboardController@studentListTable')->name('student.list');
     Route::get('/student/list', 'AdminDashboardController@studentList')->name('admin.ajax.student_list');    

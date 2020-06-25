@@ -12,6 +12,10 @@ use App\Subject;
 use App\HonoursSujbect;
 use App\Compulsory;
 use App\RegularSubject;
+use Auth;
+use Hash;
+use DB;
+use Carbon\Carbon;
 class AdminDashboardController extends Controller
 {
    
@@ -369,5 +373,39 @@ class AdminDashboardController extends Controller
                Compulsory::insert($data);
         }
         return redirect()->back()->with('message','Data Updated_successfully');
+    }
+
+
+    public function changePasswordForm()
+    {
+        return view('admin.change_password');
+    }
+
+    public function changePassword(Request $request)
+    {
+        $validatedData = $request->validate([
+            'email' => ['required','email'],
+            'current_password' => ['required', 'string', 'min:6'],
+            'new_password' => ['required', 'string', 'min:6'],
+            'confirm_password' => ['required', 'string', 'min:6', 'same:new_password'],
+        ]);
+
+        $current_password = Auth::user()->password;   
+
+        if(Hash::check($request->input('current_password'), $current_password)){           
+            $user_id = Auth::user()->id; 
+            $password_change = DB::table('admin')
+            ->where('id',$user_id)
+            ->update([
+                'email' => $request->input('email'),
+                'password' => Hash::make($request->input('confirm_password')),
+                'updated_at' => Carbon::now()->setTimezone('Asia/Kolkata')->toDateTimeString(),
+            ]);
+
+            return redirect()->back()->with('message','Your Password Changed Successfully');
+            
+        }else{           
+            return redirect()->back()->with('error','Sorry Current Password Does Not matched');
+       }
     }
 }

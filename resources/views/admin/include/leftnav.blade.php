@@ -40,6 +40,7 @@
                 <li><a href="{{route('admin.notification_list')}}">Notification List</a></li>
               </ul>
             </li>
+            <li><a href="{{route('admin.change_password_form')}}"><i class="fa fa-key" aria-hidden="true"></i>Change Password</a></li>
           </ul>
         </div>
       </div>
