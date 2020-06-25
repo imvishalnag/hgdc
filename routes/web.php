@@ -32,4 +32,10 @@ Route::group(['middleware'=>'auth:admin','prefix'=>'admin','namespace'=>'Admin']
     Route::get('/list/gallery/', 'ConfigController@galleryList')->name('admin.gallery_list');
     Route::get('/image/delete/{id}', 'ConfigController@galleryDelete')->name('admin.gallery_delete');
 
+    
+    Route::get('/notification/add/', 'ConfigController@addNotificationForm')->name('admin.add_notification_form');
+    Route::post('/insert/notification/', 'ConfigController@addNotification')->name('admin.insert_notification');    
+    Route::get('/list/notification/', 'ConfigController@notificationList')->name('admin.notification_list');
+    Route::get('/notification/delete/{id}', 'ConfigController@notificationDelete')->name('admin.notification_delete');
+
 });

@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Auth;
 use Hash;
 use App\Helper\SmsSend;
+use App\Notification;
 
 use App\Gallery;
 
@@ -119,4 +120,16 @@ class FrontendController extends Controller
         }
     }
 
+    public function galleryImage()
+    {
+        $gallery = Gallery::orderBy('id','desc')->paginate(20);
+        return view('web.gallery',compact('gallery'));
+    }
+
+    public function index()
+    {        
+        $gallery = Gallery::orderBy('id','desc')->limit(9)->get();
+        $notifications = Notification::orderBy('id','desc')->limit(20)->get();
+        return view('web.index',compact('gallery','notifications'));
+    }
 }

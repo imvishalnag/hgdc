@@ -17,6 +17,9 @@ Route::post('/login/otp', 'Web\FrontendController@loginWithOtp')->name('web.otp'
 Route::get('/send/otp', 'Web\FrontendController@sendOtp')->name('web.send_otp');
 Route::post('/web/logout', 'Web\FrontendController@logout')->name('web.logout');
 
+Route::get('/web/gallery', 'Web\FrontendController@galleryImage')->name('web.gallery');
+// =========== Index ============= 
+Route::get('/','Web\FrontendController@index')->name('web.index');
 
 // Student Dashboard
 Route::group(['middleware'=>'auth:web','prefix'=>'web','namespace'=>'Web'],function(){
@@ -25,10 +28,7 @@ Route::group(['middleware'=>'auth:web','prefix'=>'web','namespace'=>'Web'],funct
     Route::get('/thanks', 'StudentDashboardController@thanks')->name('web.thanks');
     Route::get('/download', 'StudentDashboardController@download')->name('web.download');
 });
-// =========== Index ============= 
-Route::get('/', function () {
-    return view('web.index');
-})->name('web.index');
+
 
 // =========== about ============= 
 Route::get('/about', function () {
@@ -71,9 +71,7 @@ Route::get('/Result', function () {
 })->name('web.result');
 
 // =========== Gallery ============= 
-Route::get('/Gallery', function () {
-    return view('web.gallery');
-})->name('web.gallery');
+
 
 // =========== contact ============= 
 Route::get('/contact', function () {
