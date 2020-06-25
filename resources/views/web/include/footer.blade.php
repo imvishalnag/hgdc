@@ -33,11 +33,11 @@
                             <h4 class="footer-title">Useful Links</h4>
                             <div class="dlab-separator bg-primary"></div>
                             <ul>
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="result.php">Result</a></li>
-                                <li><a href="gallery.php">Gallery</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
-                                <li><a href="admission.php">Online Admission</a></li>
+                                <li><a href="{{route('web.index')}}">Home</a></li>
+                                <li><a href="{{route('web.result')}}">Result</a></li>
+                                <li><a href="{{route('web.gallery')}}">Gallery</a></li>
+                                <li><a href="{{route('web.contact')}}">Contact Us</a></li>
+                                <li><a href="{{Auth::user() ? route('web.admission') : route('web.login')}}">Online Admission</a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
 			gap: 0,
 			delayBeforeStart: 0,
 			direction: 'up',
-			duplicated: true,
+			duplicated: false,
 			pauseOnHover: true
 		});	
 	});

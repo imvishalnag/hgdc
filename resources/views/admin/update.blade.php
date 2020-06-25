@@ -4,453 +4,589 @@
 @section('content')
 <div class="right_col" role="main">
     <div class="row">
-            <div class="col-md-12" style="margin-top:50px;">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>{{$single_student->name}}</h2>
-                        <div class="clearfix"></div>
-                    </div>
-         <div class="panel-body table-responsive">
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="application_no">StudentID</label>
-                    <input type="text" disabled class="form-control" id="application_no" name="application_no" value="{{ $single_student->student_id }}">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>{{$user->name}} <small>Id: {{ $user->student_id }}</small> </h2>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="col-md-4">
-                    <label for="Name">Name</label>
-                    <input type="text" class="form-control" value="{{$single_student->name}}">
-                </div>
-                <div class="col-md-4">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" value="{{$single_student->email}}">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="session">For the Session</label>
-                    <select name="session" id="session" class="form-control">
-                        <option value="" selected disabled>--SELECT SESSION--</option>
-                        <option value="2018" {{$single_student->session == '2018'?'selected':''}}>2018</option>
-                        <option value="2019" {{$single_student->session == '2019'?'selected':''}}>2019</option>
-                        <option value="2020" {{$single_student->session == '2020'?'selected':''}}>2020</option>
-                    </select>
-                    @if($errors->has('session'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('session') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="class">Select Course</label>
-                    <select name="class" id="class" class="form-control">
-                        <option value="" selected disabled>--SELECT CLASS--</option>
-                        <option {{$single_student->course == 'HS 1st Year'?'selected':''}}>HS 1st Year</option>
-                        <option {{$single_student->course == 'HS 2nd Year'?'selected':''}}>HS 2nd Year</option>
-                    </select>
-                    @if($errors->has('class'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('class') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="sex">Sex(M/F)</label>
-                    <select name="sex" id="sex" class="form-control">
-                        <option value="" selected disabled>--SELECT SEX--</option>
-                        <option {{$single_student->sex == 'Male'?'selected':''}}>Male</option>
-                        <option {{$single_student->sex == 'Female'?'selected':''}}>Female</option>
-                    </select>
-                    @if($errors->has('sex'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('sex') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" class="form-control" id="dob" value="{{$single_student->dob}}" name="dob">
-                    @if($errors->has('dob'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('dob') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="fn">Father's Name</label>
-                    <input type="text" class="form-control" id="fn" name="fn" value="{{ $single_student->fn }}">
-                    @if($errors->has('fn'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('fn') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="mn">Mother's Name</label>
-                    <input type="text" class="form-control" id="mn" name="mn" value="{{ $single_student->mn }}">
-                    @if($errors->has('mn'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('mn') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="gname">Guardian's Name</label>
-                        <input type="text" class="form-control" id="gname" name="gname" value="{{ $single_student->gname }}">
-                        @if($errors->has('gname'))
-                        <span class="invalid-feedback" role="alert" style="color:red">
-                            <strong>{{ $errors->first('gname') }}</strong>
-                        </span>
-                        @endif
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 student-bx about">
+                            <!-- Vision & Mission -->
+                            <div class="section-head text-center">
+                                <h1 class="title">Online  Admission</h1>
+                                <p>Three Year Degree Course (Arts) Admission Form</p>
+                                <div class="dlab-separator bg-orange"></div>
+                            </div>
+                            @if (Session::has('message'))
+                            <div class="alert alert-success" >{{ Session::get('message') }}</div>
+                            @endif
+                            @if (Session::has('error'))
+                                <div class="alert alert-danger">{{ Session::get('error') }}</div>
+                            @endif
+                        
+                            <div class="add-form">
+                                {{ Form::open(['method' => 'post','route'=>'student.store', 'enctype'=>'multipart/form-data']) }}
+                                    <input type="hidden" value="Contact" name="dzToDo">
+                                    <div class="row">
+                                        <div class="form-row col-md-12">
+                                            <div class="col-md-12 col-sm-12">
+                                                <h5> Applicant basic information </h5>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="name">1. Name in Full <span style="color:red"><b> * </b></span> </label>
+                                                    <input name="name" type="text" value="{{old("name")}}" class="form-control" required>
+                                                    @if($errors->has('name'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="dob">2. Date of Birth <span style="color:red"><b> * </b></span></label>
+                                                    <input name="dob" type="date" value="{{old("dob")}}" class="form-control" required>
+                                                    @if($errors->has('dob'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red" >
+                                                            <strong>{{ $errors->first('dob') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="phone">3. Phone Number <span style="color:red"><b> * </b></span></label>
+                                                    <input name="phone" type="text" value="{{$user->mobile}}" disabled class="form-control">
+                                                    <input name="mobile" type="hidden" value="{{$user->mobile}}" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="form-group">
+                                                    <label for="gender">4. Gender <span style="color:red"><b> * </b></span></label>
+                                                    <select name="gender">
+                                                        <option value="Male" {{old('sex') == 'Male'?'selected':''}}>Male</option>
+                                                        <option value="Female" {{old('sex') == 'Female'?'selected':''}}>Female</option>
+                                                    </select>
+                                                    @if($errors->has('gender'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('gender') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="f_name">5.a. Father's Name <span style="color:red"><b> * </b></span></label>
+                                                    <input name="f_name" value="{{old("f_name")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('f_name'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('f_name') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="f_occoupation">5.b. Father's Occoupation </label>
+                                                    <input name="f_occupation" value="{{old("f_occupation")}}" type="text" class="form-control">
+                                                    @if($errors->has('f_occupation'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('f_occupation') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="m_name">6.a. Mother's Name <span style="color:red"><b> * </b></span></label>
+                                                    <input name="m_name" value="{{old("m_name")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('m_name'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('m_name') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="m_occoupation">6.b. Mother's Occoupation </label>
+                                                    <input name="m_occupation" value="{{old("m_occupation")}}" type="text" class="form-control">
+                                                    @if($errors->has('m_occupation'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('m_occupation') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="nationality">7. Nationality <span style="color:red"><b> * </b></span></label>
+                                                    <input name="nationality" value="{{old("nationality")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('nationality'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('nationality') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="religion">8. Religion <span style="color:red"><b> * </b></span></label>
+                                                    <input name="religion" value="{{old("religion")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('religion'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red" >
+                                                            <strong>{{ $errors->first('religion') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="material">9. Marital Status <span style="color:red"><b> * </b></span></label>
+                                                    <select name="material" required>
+                                                        <option {{old('material') == 'Married'?'selected':''}}>Married</option>
+                                                        <option {{old('material') == 'Unmarried'?'selected':''}}>Unmarried</option>
+                                                    </select>
+                                                    @if($errors->has('material'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('material') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="caste">10. Caste <span style="color:red"><b> * </b></span></label>
+                                                    <select name="caste">
+                                                        <option {{old('caste') == 'SC'?'selected':''}}>SC</option>
+                                                        <option {{old('caste') == 'ST'?'selected':''}}>ST</option>
+                                                        <option {{old('caste') == 'OBC'?'selected':''}}>OBC</option>
+                                                        <option {{old('caste') == 'MOBC'?'selected':''}}>MOBC</option>
+                                                    </select>
+                                                    @if($errors->has('caste'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('caste') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row col-md-12">
+                                            <div class="col-md-12 col-sm-12">
+                                                <hr>
+                                                <h5> Applicant address information </h5>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="p_address">11.a. Permanent Address <span style="color:red"><b> * </b></span></label>
+                                                    <textarea name="p_address" style="height:120px" class="form-control" placeholder="Your message here" required>{{old("p_address")}}</textarea>
+                                                    @if($errors->has('p_address'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('p_address') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group m-0">
+                                                    <label for="village">11.b. Village/Town <span style="color:red"><b> * </b></span></label>
+                                                    <input name="village" value="{{old("village")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('village'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('village') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="po">11.c. P.O. <span style="color:red"><b> * </b></span></label>
+                                                    <input name="po" value="{{old("po")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('po'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('po') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group m-0">
+                                                    <label for="dist">11.d. District <span style="color:red"><b> * </b></span></label>
+                                                    <input name="dist" value="{{old("dist")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('dist'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('dist') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="pin">11.e. Pincode. <span style="color:red"><b> * </b></span></label>
+                                                    <input name="pin" value="{{old("pin")}}" type="number" class="form-control" required>
+                                                    @if($errors->has('pin'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('pin') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row col-md-12">
+                                            <div class="col-md-12 col-sm-12">
+                                                <hr>
+                                                <h5>If you have a legal guardian </h5>
+                                                <div class="form-group">
+                                                    <span class="CKRD"><input name="l_guardian" type="radio" value="yes">Yes</span>
+                                                    <span class="CKRD"><input name="l_guardian" type="radio" checked value="no">No</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-row col-md-12" id="l_guardian_div" style="display:none">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="form-row col-md-12">
+                                            <div class="col-md-12 col-sm-12">
+                                                <hr>
+                                                <h5> Applicant Education Data</h5>
+                                                <h6 class="mb-0">H.S.L.C</h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group mb-2">
+                                                    <label for="hslc-div">13.a. Name of Board/University <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hslc_board" value="{{old("hslc_board")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('hslc_board'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hslc_board') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="form-group mb-2">
+                                                    <label for="hslc-div">13.b. Year of Passing <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hslc_yr" value="{{old("hslc_yr")}}" type="number" class="form-control" required>
+                                                    @if($errors->has('hslc_yr'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hslc_yr') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="form-group mb-2">
+                                                    <label for="hslc-div">13.c. Exam Roll No. <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hslc_roll" value="{{old("hslc_roll")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('hslc_roll'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hslc_roll') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="form-group mb-2">
+                                                    <label for="hslc-div">13.d. Division <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hslc_div" value="{{old("hslc_div")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('hslc_div'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hslc_div') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group mb-2">
+                                                    <label for="hslc-div">13.e. Name of School/College <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hslc_school" value="{{old("hslc_school")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('hslc_school'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hslc_school') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <h6 class="mb-0">H.S.</h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="hs-div">14.a. Name of Board/University <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hs_board" value="{{old("hs_board")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('hs_board'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hs_board') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="form-group">
+                                                    <label for="hs-div">14.b. Year of Passing <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hs_year" value="{{old("hs_year")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('hs_year'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hs_year') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="form-group">
+                                                    <label for="hs-div">14.c. Exam Roll No. <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hs_roll" value="{{old("hs_roll")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('hs_roll'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hs_roll') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2">
+                                                <div class="form-group">
+                                                    <label for="hs-div">14.d. Division <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hs_div" value="{{old("hs_div")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('hs_div'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hs_div') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-3">
+                                                <div class="form-group">
+                                                    <label for="hs_school">14.e. Name of School/College <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hs_school" value="{{old("hs_school")}}" type="text" class="form-control" required>
+                                                    @if($errors->has('hs_school'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hs_school') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <h6 class="mb-0">H.S. Detail</h6>
+                                            </div>
+                                            <div class="form-row col-md-12 subjects">
+                                                <div class="col-md-4 col-sm-4">
+                                                    <div class="form-group mb-2">
+                                                        <label for="hs-sub6-mark">20.a. Subject1 Name <span style="color:red"><b> * </b></span></label>
+                                                        <input name="subject_name[]" type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-6">
+                                                    <div class="form-group mb-2">
+                                                        <label for="hs-sub6--mark">20.b. Full Mark <span style="color:red"><b> * </b></span></label>
+                                                        <input name="full_marks[]" type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-6">
+                                                    <div class="form-group mb-2">
+                                                        <label for="hs-sub6-mark">20.c. Mark Scored <span style="color:red"><b> * </b></span></label>
+                                                        <input name="marks_scored[]" type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-6">
+                                                    <div class="form-group mb-2">
+                                                        <br>
+                                                        <button type="button" class="btn btn-primary btn-sm mt-3" id="add"> 
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row col-md-12">
+                                                <div class="col-md-4 col-sm-4">
+                                                    <div class="form-group mb-2">
+                                                        <label for="t_mark">21. Total Marks Obtain <span style="color:red"><b> * </b></span></label>
+                                                        <input name="t_mark" type="text" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row col-md-12">
+                                            <div class="col-md-12 col-sm-12">
+                                                <hr>
+                                                <h5> Subject selection </h5>
+                                                <h6>In which course your are seeking admission for <span style="color:red"><b> * </b></span></h6>
+                                                <div class="form-group">
+                                                    <span class="CKRD"><input name="course-type" type="radio" value="h_course">Honours Course &nbsp;</span>
+                                                    <span class="CKRD"><input name="course-type" type="radio" value="r_course">Regular Course &nbsp;</span>
+                                                    @if($errors->has('course-type'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('course-type') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="form-row col-md-12" id="h-course" style="display:none">
+                                                <div class="col-md-3 col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="name">22.a. Honours Subject <br><br></label>
+                                                        <select name="honors">
+                                                            <option {{old('honors') == 'Assamese'?'selected':''}}>Assamese</option>
+                                                            <option {{old('honors') == 'Political Science'?'selected':''}}>Political Science</option>
+                                                            <option {{old('honors') == 'Pholisophy'?'selected':''}}>Pholisophy</option>
+                                                            <option {{old('honors') == 'Education'?'selected':''}}>Education</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-sm-3">
+                                                    <div class="form-group">
+                                                        <label for="name">22.b. Honours Generic Subject (other than honours subject)</label>
+                                                        <select name="honors_other">
+                                                            <option {{old('honors_other') == 'Education'?'selected':''}}>Education</option>
+                                                            <option {{old('honors_other') == 'Econonics/Elective Assamese (ASL)'?'selected':''}}>Econonics/Elective Assamese (ASL)</option>
+                                                            <option {{old('honors_other') == 'Pholisophy'?'selected':''}}>Pholisophy</option>
+                                                            <option {{old('honors_other') == 'Political Science'?'selected':''}}>Political Science</option>
+                                                            <option {{old('honors_other') == 'Computer Science'?'selected':''}}>Computer Science</option>
+                                                            <option {{old('honors_other') == 'Mathematics'?'selected':''}}>Mathematics</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="name">22.c. Compulsory Subject <span style="color:red"><b> * </b></span></label>													
+                                                        <div class="form-group mb-1">
+                                                            <span class="CKRD">
+                                                                <input type="checkbox" name="compulsory[]" checked disabled>Enviromental Studies &nbsp;
+                                                            </span>
+                                                            <input type="hidden" name="compulsory[]" value="Enviromental Studies">
+                                                            <span class="CKRD">
+                                                                <input class="h-comp-sub-s" name="compulsory[]" type="checkbox" value="English Communication" onclick="getCHonorsLang('English Communication')">English Communication  or, &nbsp;
+                                                            </span>
+                                                            <span class="CKRD">
+                                                                <input class="h-comp-sub-s" type="checkbox" name="compulsory[]" value="MIL" onclick="getCHonorsLang('MIL')">MIL &nbsp;
+                                                            </span>
+                                                            
+                                                            <span class="CKRD" style="display: none" id="mil_div_honors">
+                                                                    
+                                                            </span>
+                                                        </div>																	
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row col-md-12" id="r-course" style="display:none">
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="name">22.a. Elective Subject <b style="color:red; font-weight:500;">(Any Two)</b> <span style="color:red"><b> * </b></span></label>											
+                                                        <div class="form-group">
+                                                            <span class="CKRD"><input class="r-ele-sub" name="elective[]" value="Education" type="checkbox">Education &nbsp;</span>
+                                                            <span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Econonics/Elective Assamese (ASL)">Econonics/Elective Assamese (ASL) &nbsp;</span>
+                                                            <span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Pholisophy">Pholisophy &nbsp;</span>
+                                                            <span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Political Science">Political Science &nbsp;</span>
+                                                            <span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Computer Science">Computer Science &nbsp;</span>
+                                                            <span class="CKRD"><input class="r-ele-sub" name="elective[]" type="checkbox" value="Mathematics">Mathematics &nbsp;</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="name">22.b. Compulsory Subject <span style="color:red"><b> * </b></span></label>											
+                                                        <div class="form-group">
+                                                            <span class="CKRD">
+                                                                <input name="compulsory1[]" type="checkbox" checked disabled>English &nbsp;
+                                                            </span>
+                                                            <input type="hidden" name="compulsory1[]" value="English">
+
+                                                            <span class="CKRD">
+                                                                <input name="compulsory1[]" type="checkbox" checked disabled>Enviromental Studies &nbsp;
+                                                            </span>
+                                                            <input type="hidden" name="compulsory1[]" value="Environmental Studies">
+
+                                                            <span class="CKRD">
+                                                                <input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="English Communication" onclick="getCheckedGroupBoxes('English Communication')">English Communication &nbsp;
+                                                            </span>
+
+                                                            <span class="CKRD">
+                                                                <input class="r-comp-sub-s" name="compulsory1[]" type="checkbox" value="MIL" onclick="getCheckedGroupBoxes('MIL')">MIL &nbsp;
+                                                            </span>
+                                                            <span class="CKRD" style="display: none" id="mil_div">
+                                                                
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row col-md-12">
+                                            <div class="col-md-12 col-sm-12">
+                                                <hr>
+                                                <h5>Upload required documents</h5>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="name"> H.S. Marksheet<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hs_marksheet" type="file" class="form-control" required>
+                                                    @if($errors->has('hs_marksheet'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hs_marksheet') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="name">H.S. Certificate<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
+                                                    <input name="hs_certificate" type="file" class="form-control" required>
+                                                    @if($errors->has('hs_certificate'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('hs_certificate') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="name">Caste Certificate (if Applicable)<b style="color:red; font-weight:500;">(less than 1MB)</b> </label>
+                                                    <input name="caste_certificate" type="file" class="form-control">
+                                                    @if($errors->has('caste_certificate'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('caste_certificate') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="name">23. Signature of applicant<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
+                                                    <input name="sign" type="file" class="form-control" required>
+                                                    @if($errors->has('sign'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('sign') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="name">23. Photo of applicant<b style="color:red; font-weight:500;">(less than 1MB)</b> <span style="color:red"><b> * </b></span></label>
+                                                    <input name="photo" type="file" class="form-control" required>
+                                                    @if($errors->has('photo'))
+                                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                                            <strong>{{ $errors->first('photo') }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <input name="delecration" type="checkbox" required>I hereby declare that i shall abide by the rules and regulations of the College and also all the above information provided by me are true and in best of my knowledge
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row col-md-12">
+                                            <div class="col-md-12 col-sm-12 mt-3 mb-2">
+                                                <button name="submit" type="submit" value="Submit" class="btn btn-primary btn-lg">Submit Form<span></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="occupation">Occupation of Father/ Guardian</label>
-                    <input type="text" class="form-control" id="occupation" name="occupation" value="{{ $single_student->occupation }}">
-                    @if($errors->has('occupation'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('occupation') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="income">Annual Income of Father/ Guardian(In Rs.)</label>
-                        <input type="number" class="form-control" id="income" name="income" value="{{$single_student->income}}">
-                        @if($errors->has('income'))
-                        <span class="invalid-feedback" role="alert" style="color:red">
-                            <strong>{{ $errors->first('income') }}</strong>
-                        </span>
-                        @endif
                     </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="nationality">Nationality</label>
-                    <input type="text" class="form-control" id="nationality" name="nationality" value="{{ $single_student->nationality }}">
-                    @if($errors->has('nationality'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('nationality') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="religion">Religion</label>
-                    <select name="religion" class="form-control">
-                        <option value="" selected disabled>--SELECT RELIGION--</option>
-                        <option {{$single_student->religion == 'Islam'?'selected':''}}>Islam</option>
-                        <option {{$single_student->religion == 'Hindu'?'selected':''}}>Hindu</option>
-                        <option {{$single_student->religion == 'Christian'?'selected':''}}>Christian</option>
-                        <option {{$single_student->religion == 'Jain'?'selected':''}}>Jain</option>
-                        <option {{$single_student->religion == 'Buddhism'?'selected':''}}>Buddhism</option>
-                    </select>
-                    @if($errors->has('religion'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('religion') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="cast-comm-group-tribe">Cast</label>
-                    <select name="cast" class="form-control">
-                        <option value="" selected disabled>--SELECT CASTE--</option>
-                        <option {{$single_student->cast == 'General'?'selected':''}}>General</option>
-                        <option {{$single_student->cast == 'EWS'?'selected':''}}>EWS</option>
-                        <option {{$single_student->cast == 'OBC'?'selected':''}}>OBC</option>
-                        <option {{$single_student->cast == 'MOBC'?'selected':''}}>MOBC</option>
-                        <option {{$single_student->cast == 'SC'?'selected':''}}>SC</option>
-                        <option {{$single_student->cast == 'ST(P)'?'selected':''}}>ST(P)</option>
-                        <option {{$single_student->cast == 'ST(H)'?'selected':''}}>ST(H)</option>
-                    </select>
-                    @if($errors->has('cast'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('cast') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="mobile">Contact No</label>
-                    <input type="number" name="mobile" class="form-control" id="mobile" value="{{$single_student->mobile}}">
-                    @if($errors->has('mobile'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('mobile') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <h2>Present Address</h2>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="village">Village/Town</label>
-                    <input name="village" class="form-control" id="village" value="{{$single_student->vill}}">
-                    @if($errors->has('village'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('village') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="po">Post Office</label>
-                    <input name="po" class="form-control" id="po" value="{{$single_student->po}}">
-                    @if($errors->has('po'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('po') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="ps">Police Station</label>
-                    <input name="ps" class="form-control" id="ps" value="{{$single_student->ps}}">
-                    @if($errors->has('ps'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('ps') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="dist">District</label>
-                    <input name="dist" class="form-control" id="dist" value="{{$single_student->dist}}">
-                    @if($errors->has('dist'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('dist') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="state">State</label>
-                    <input name="state" class="form-control" id="state" value="{{$single_student->state}}">
-                    @if($errors->has('state'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('state') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="pin">PIN</label>
-                    <input type="number" name="pin" class="form-control" id="pin" value="{{$single_student->pin}}">
-                    @if($errors->has('pin'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('pin') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <h2>Permanent Address</h2>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="p_village">Village/Town</label>
-                    <input name="p_village" class="form-control" id="p_village" value="{{$single_student->p_vill}}">
-                    @if($errors->has('p_village'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('p_village') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="p_po">Post Office</label>
-                    <input name="p_po" class="form-control" id="p_po" value="{{$single_student->p_po}}">
-                    @if($errors->has('p_po'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('p_po') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="p_ps">Police Station</label>
-                    <input name="p_ps" class="form-control" id="p_ps" value="{{$single_student->p_ps}}">
-                    @if($errors->has('p_ps'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('p_ps') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="p_dist">District</label>
-                    <input name="p_dist" class="form-control" id="p_dist" value="{{$single_student->p_ps}}">
-                    @if($errors->has('p_dist'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('p_dist') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="p_state">State</label>
-                    <input name="p_state" class="form-control" id="p_state" value="{{$single_student->p_state}}">
-                    @if($errors->has('p_state'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('p_state') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="p_pin">PIN</label>
-                    <input type="number" name="p_pin" class="form-control" id="p_pin" value="{{$single_student->p_pin}}">
-                    @if($errors->has('p_pin'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('p_pin') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <h2>Details of last School attended</h2>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="exam">Name of the Examination Passed</label>
-                    <input type="text" class="form-control" id="exam" name="exam" value="{{ $single_student->exam }}">
-                    @if($errors->has('exam'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('exam') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="registration">Board Registration No</label>
-                    <input type="text" class="form-control" id="registration" name="registration" value="{{$single_student->registration }}">
-                    @if($errors->has('registration'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('registration') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="last_attended_school">Name of the Institution attended last</label>
-                    <input type="text" class="form-control" id="last_attended_school" name="last_attended_school" value="{{ $single_student->last_attended_school }}">
-                    @if($errors->has('last_attended_school'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('last_attended_school') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="last_school_addr">Address of the above institution</label>
-                    <textarea class="form-control" id="last_school_addr" name="last_school_addr">{{ $single_student->last_school_addr }}</textarea>
-                    @if($errors->has('last_school_addr'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('last_school_addr') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-12">
-                    <table class="table table-bordered table-striped table-highlight">
-                        <thead>
-                            <th>Sl. No.</th>
-                            <th>Subjects</th>
-                            <th>Max Marks</th>
-                            <th>Marks/Grade Obtained</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><textarea name="subject" class="form-control">{{$single_student->subject}}</textarea></td>
-                                <td><input type="number" name="max_mark" value="{{$single_student->max_marks}}" class="form-control" /></td>
-                                <td><input type="number" name="marks_obtained" value="{{$single_student->marks_obtained}}" class="form-control" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label for="ncc">Are you willing to join NCC?</label><br>
-                    <select name="ncc" class="form-control">
-                        <option value="">--SELECT ANY--</option>
-                        <option {{$single_student->ncc == 'Yes'?'selected':''}}>Yes</option>
-                        <option {{$single_student->ncc == 'No'?'selected':''}}>No</option>
-                    </select>
-                    @if($errors->has('ncc'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('ncc') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="bsg">Are you willing to join Bharat Scout & Guide?</label><br>
-                    <select name="bsg" class="form-control">
-                        <option value="">--SELECT ANY--</option>
-                        <option  {{$single_student->bsg == 'Yes'?'selected':''}}>Yes</option>
-                        <option  {{$single_student->bsg == 'No'?'selected':''}}>No</option>
-                    </select>
-                    @if($errors->has('bsg'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('bsg') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div class="col-md-4">
-                    <label for="">Are you willing to register as trainee in computer centre?</label>
-                    <select name="computer" class="form-control">
-                        <option value="">--SELECT ANY--</option>
-                        <option  {{$single_student->computer == 'Yes'?'selected':''}}>Yes</option>
-                        <option  {{$single_student->computer == 'No'?'selected':''}}>No</option>
-                    </select>
-                    @if($errors->has('computer'))
-                    <span class="invalid-feedback" role="alert" style="color:red">
-                        <strong>{{ $errors->first('computer') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-4">
-                        <label for="">Have you discontinoud study after passing the qualifying exam?</label>
-                        <select name="gap" class="form-control">
-                            <option value="">--SELECT ANY--</option>
-                            <option  {{$single_student->gap == 'Yes'?'selected':''}}>Yes</option>
-                            <option  {{$single_student->gap == 'No'?'selected':''}}>No</option>
-                        </select>
-                        @if($errors->has('gap'))
-                        <span class="invalid-feedback" role="alert" style="color:red">
-                            <strong>{{ $errors->first('gap') }}</strong>
-                        </span>
-                        @endif
-                    </div>
-                    <div class="col-md-4">
-                        <label for="">Will you reside in the college Hostel?</label>
-                        <select name="hostel" class="form-control">
-                            <option value="">--SELECT ANY--</option>
-                            <option  {{$single_student->hostel == 'Yes'?'selected':''}}>Yes</option>
-                            <option  {{$single_student->hostel == 'No'?'selected':''}}>No</option>
-                        </select>
-                        @if($errors->has('hostel'))
-                        <span class="invalid-feedback" role="alert" style="color:red">
-                            <strong>{{ $errors->first('hostel') }}</strong>
-                        </span>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-4">
-                        <label for="placed">Place</label>
-                        <input type="text" id="placed1" class="form-control" name="placed1" value="{{ $single_student->placed1 }}">
-                        @if($errors->has('placed1'))
-                        <span class="invalid-feedback" role="alert" style="color:red">
-                            <strong>{{ $errors->first('placed1') }}</strong>
-                        </span>
-                        @endif
-                    </div>
-                    <div class="col-md-4">
-                        <label for="dated1">Date</label>
-                        <input type="date" id="dated1" class="form-control" name="dated1" value="{{ $single_student->dated1 }}">
-                        @if($errors->has('dated1'))
-                        <span class="invalid-feedback" role="alert" style="color:red">
-                            <strong>{{ $errors->first('dated1') }}</strong>
-                        </span>
-                        @endif
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
@@ -458,5 +594,9 @@
 </div>
 @endsection
 
+@section('script') 
+    <style> input[type=checkbox], input[type=radio] {margin-right: 4px}select{width: 100%;padding: 8px;border-color: #ccc;}@media(max-width:425px){.col-md-6, .col-md-4, .col-md-3, .col-md-2{width:100%}}</style>
+    @include('web.admsn_script.admsn_script')
+@endsection
 
 
