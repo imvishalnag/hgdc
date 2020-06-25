@@ -26,6 +26,15 @@ Route::group(['middleware'=>'auth:admin','prefix'=>'admin','namespace'=>'Admin']
     Route::get('/student/list', 'AdminDashboardController@studentList')->name('admin.ajax.student_list');    
     Route::get('/student/show/{id}', 'AdminDashboardController@show')->name('admin.show');
     Route::get('/student/edit/{id}', 'AdminDashboardController@edit')->name('admin.edit');
+    Route::put('/student/update/{id}', 'AdminDashboardController@update')->name('admin.update');
+
+    
+    Route::get('/student/hs/detail/edit/{student_id}', 'AdminDashboardController@editHsDetail')->name('admin.student_hs_detail_edit');
+    Route::get('/student/hs/detail/delete/{id}', 'AdminDashboardController@deleteHsDetail')->name('admin.student_hs_detail_delete');    
+    Route::post('/student/hs/detail/update/', 'AdminDashboardController@updateHsDetail')->name('admin.student_hs_detail_update');
+    
+    Route::get('/student/subject/selection/edit/{student_id}', 'AdminDashboardController@editSubjectSelection')->name('admin.student_subject_selection_edit');
+    Route::post('/student/subject/selection/update/', 'AdminDashboardController@updateSubjectSelection')->name('admin.student_subject_selection_update');
 
     Route::get('/add/gallery/', 'ConfigController@addGalleryForm')->name('admin.add_gallery_form');
     Route::post('/insert/gallery/', 'ConfigController@addGallery')->name('admin.insert_gallery');

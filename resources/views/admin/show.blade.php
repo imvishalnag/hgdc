@@ -353,7 +353,7 @@
                 <div class="col-md-4">
                     <div class="form-group" style="text-align: center;">
                         <h5>Hs Marksheet</h5>
-                        <img src="{{asset('admin/student/'.$user->hs_marksheet.'')}}" alt="">
+                        <img src="{{asset('admin/student/'.$user->hs_marksheet.'')}}" class="img-responsive" alt="">
                     </div>
                 </div>
             @endif
@@ -361,7 +361,7 @@
                 <div class="col-md-4">
                     <div class="form-group" style="text-align: center;">
                         <h5>Hs Certificate</h5>
-                        <img src="{{asset('admin/student/'.$user->hs_certificate.'')}}" alt="">
+                        <img src="{{asset('admin/student/'.$user->hs_certificate.'')}}" class="img-responsive" alt="">
                     </div>
                 </div>
             @endif
