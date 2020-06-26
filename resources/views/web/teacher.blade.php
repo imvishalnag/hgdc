@@ -99,7 +99,7 @@
 							<div class="blog-post blog-grid style-2">
 									<div class="dlab-info">
 										<div class="dlab-post-media">
-										<a><img src="{{asset('web/images/techer/com/1.jpg')}}" alt=""></a>
+										<a><img src="{{asset('web/images/techer/eng/1.jpg')}}" alt=""></a>
 									</div>
 									<div class="dlab-post-title ">
 										<h5 class="post-title"><a>Dr. Deluar Hussain</a></h5>
@@ -125,7 +125,7 @@
 							<div class="blog-post blog-grid style-2">
 									<div class="dlab-info">
 										<div class="dlab-post-media">
-										<a><img src="{{asset('web/images/techer/com/1.jpg')}}" alt=""></a>
+										<a><img src="{{asset('web/images/techer/eng/2.jpg')}}" alt=""></a>
 									</div>
 									<div class="dlab-post-title ">
 										<h5 class="post-title"><a>Ms. Shamina P Ahmed</a></h5>

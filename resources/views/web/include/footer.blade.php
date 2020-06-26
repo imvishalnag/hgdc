@@ -58,9 +58,9 @@
                     <div class="col-md-6 col-sm-6 text-left">Copyright © 2020 Hari-Gayatri Das College. All right reserved </div>
                     <div class="col-md-6 col-sm-6 text-right "> 
 						<ul class="fb-list">
-							<li><a href="about.php">History of HGDC</a></li>
-							<li><a href="facilities.php">Facilities</a></li>
-							<li><a href="teacher.php">Teacher</a></li>
+							<li><a href="{{route('web.about')}}">About HGDC</a></li>
+							<li><a href="{{route('web.facilities')}}">Facilities</a></li>
+							<li><a href="{{route('web.teacher')}}">Teacher</a></li>
 						</ul>
 					</div>
                 </div>
