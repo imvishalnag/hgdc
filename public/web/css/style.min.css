@@ -11824,12 +11824,14 @@ ol.commentlist li .star-rating {
     float: none;
     height: auto;
     max-width: 100%;
-    padding: 20px 15px;
+    padding: 0;
     width: 100%;
+    background: #243529;
+    margin-bottom: 10px;
   }
   .mo-left .header-nav .logo-header img {
     max-width: unset;
-    width: 100px;
+    width: 200px;
     height: auto;
   }
   .mo-left .navbar-toggler.open span {
