@@ -182,6 +182,7 @@
 													<div class="form-group">
 														<label for="caste">10. Caste <span style="color:red"><b> * </b></span></label>
 														<select name="caste">
+															<option {{old('caste') == 'GENERAL'?'selected':''}}>GENERAL</option>
 															<option {{old('caste') == 'SC'?'selected':''}}>SC</option>
 															<option {{old('caste') == 'ST'?'selected':''}}>ST</option>
 															<option {{old('caste') == 'OBC'?'selected':''}}>OBC</option>

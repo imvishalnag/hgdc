@@ -82,7 +82,7 @@
 										<a><img src="{{asset('web/images/techer/as/4.jpg')}}" alt=""></a>
 									</div>
 									<div class="dlab-post-title ">
-										<h5 class="post-title"><a>Prof. Gitumani Mahanta</a></h5>
+										<h5 class="post-title"><a>Mrs. Gitumani Mahanta</a></h5>
 										<span>M.A., B.Ed  (SLET)</span>
 									</div>
 								</div>
@@ -128,7 +128,7 @@
 										<a><img src="{{asset('web/images/techer/eng/2.jpg')}}" alt=""></a>
 									</div>
 									<div class="dlab-post-title ">
-										<h5 class="post-title"><a>Ms. Shamina P Ahmed</a></h5>
+										<h5 class="post-title"><a>Ms.Shamina P Ahmed</a></h5>
 										<span>M.A.</span>
 									</div>
 								</div>
@@ -148,7 +148,7 @@
 										<a><img src="{{asset('web/images/techer/eco/1.jpg')}}" alt=""></a>
 									</div>
 									<div class="dlab-post-title ">
-										<h5 class="post-title"><a>Prof. Babita Sarmah</a></h5>
+										<h5 class="post-title"><a>Ms. Babita Sarmah</a></h5>
 										<span>M.A. (H.O.D.)</span>
 									</div>
 								</div>
@@ -286,8 +286,8 @@
 										<a><img src="{{asset('web/images/techer/phil/3.jpg')}}" alt=""></a>
 									</div>
 									<div class="dlab-post-title ">
-										<h5 class="post-title"><a>Mr. Rinku Deka</a></h5>
-										<span>M.A.</span>
+										<h5 class="post-title"><a>Ms. Rinku Deka </a></h5>
+										<span>M.A. (SLET)</span>
 									</div>
 								</div>
 							</div>

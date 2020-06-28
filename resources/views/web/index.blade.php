@@ -104,7 +104,7 @@
                                     <p class="ext">Last, by this message I appeal all of you to co-operate with us in a new outlook to achieve self-sufficiency and make this institution a remarkable one. </p>
                                     <div class="princ-name">
                                         <h5 class="m-t0 m-b5">Prof. Arun Ch. Sarma</h5>
-                                        <span>M.Sc (Physic), M.Phil</span>
+                                        <span>M.Sc (Physics), M.Phil</span>
                                     </div>
                                 </div>
                             </div>

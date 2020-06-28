@@ -163,6 +163,7 @@
                                                     <div class="form-group">
                                                         <label for="caste">10. Caste <span style="color:red"><b> * </b></span></label>
                                                         <select name="caste">
+															<option {{$user->caste == 'GENERAL'?'selected':''}}>GENERAL</option>
                                                             <option {{$user->caste == 'SC'?'selected':''}}>SC</option>
                                                             <option {{$user->caste == 'ST'?'selected':''}}>ST</option>
                                                             <option {{$user->caste == 'OBC'?'selected':''}}>OBC</option>
