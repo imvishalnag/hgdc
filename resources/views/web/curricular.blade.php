@@ -80,7 +80,7 @@
 										<li class="m-3 text-justify"><p class="m-0"> <strong>Honours Courses  <small style="font-weight:700">(Any two from the following)</small> : </strong> <br></p>
 											<ol>
 												<li> <p class="m-0">Education</p></li>
-												<li> <p class="m-0">Economics/Elective (ASL)</p></li>
+												<li> <p class="m-0">Economics/Elective Assamese (ASL)</p></li>
 												<li> <p class="m-0">Philosophy</p></li>
 												<li> <p class="m-0">Political Science</p></li>
 												<li> <p class="m-0">Computer Science</p></li>
