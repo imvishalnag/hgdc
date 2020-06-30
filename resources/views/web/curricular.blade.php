@@ -51,18 +51,17 @@
 											</ol>
 										</li>
 
-										<li class="m-3 text-justify"><p class="m-0"> <strong>Compulsory Subject for Sem I : </strong> <br></p>
+										<li class="m-3 text-justify"><p class="m-0"> <strong>Compulsory Subject : </strong> <br></p>
 											<ol>
-												<li> <p class="m-0">English Communication</p></li>
-												<li> <p class="m-0">MIL (Assamese/Hindi) Communication</p></li>
-												<li> <p class="m-0">Enviromental Studies</p></li>
+												<li> <p class="m-0">English Communication or MIL (Assamese/Hindi) Communication <strong> (for Sem I)</strong></p></li>
+												<li> <p class="m-0">Enviromental Studies <strong> (for Sem II)</strong></p></li>
 											</ol>
 										</li>
 
 										<li class="m-3 text-justify"><p class="m-0"> <strong>Honours Generic Subject <small style="font-weight:700">(Any one from the following other than honours)</small> : </strong> <br></p>
 											<ol>
 												<li> <p class="m-0">Education</p></li>
-												<li> <p class="m-0">Economics/Elective (ASL)</p></li>
+												<li> <p class="m-0">Economics/Elective Assamese (ASL)</p></li>
 												<li> <p class="m-0">Philosophy</p></li>
 												<li> <p class="m-0">Political Science</p></li>
 												<li> <p class="m-0">Computer Science</p></li>
@@ -73,9 +72,8 @@
 										<li class="m-3 text-justify"><p class="m-0"> <strong>Regular Courses  <small style="font-weight:700">(Compulsory Subject)</small> : </strong> <br></p>
 											<ol>
 												<li> <p class="m-0">English</p></li>
-												<li> <p class="m-0">English Communication</p></li>
-												<li> <p class="m-0">MIL (Assamese/Hindi) Communication</p></li>
-												<li> <p class="m-0">Enviromental Studies</p></li>
+												<li> <p class="m-0">English Communication or MIL (Assamese/Hindi) Communication <strong> (for Sem I)</strong></p></li>
+												<li> <p class="m-0">Enviromental Studies <strong> (for Sem II)</strong></p></li>
 											</ol>
 										</li>
 
