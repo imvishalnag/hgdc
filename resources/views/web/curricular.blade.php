@@ -122,7 +122,14 @@
 								</div>
 							</div> -->
 							<div class="classes-details mb-5">
-								<div class="dlab-post-text"><p class="m-0"><strong>* Free Admission for all student : As per Govt. rule <img src="images/new-1.gif" alt="" width="30" height="14"></strong></p>
+								<div class="dlab-post-text">
+								<p class="m-0">For Honourse Course fee <strong>Rs. 4020/-</strong></p>
+								<p class="m-0">For Regular Course fee <strong>Rs. 3900/-</strong></p>
+								<p class="m-0">* <strong>Rs. 600</strong> less for SC & ST Students.</p>
+								<p class="m-0">* Rs. 430/- less for 2nd& 3rd year students</p>
+								<p class="m-0">Casual admission or college permission allowed for Arrear/Repeat subject: Fee Rs. 500/- per subject </p>
+
+								<p class="m-0"><strong>* Free Admission for all student : As per Govt. rule <img src="images/new-1.gif" alt="" width="30" height="14"></strong></p>
 								</div>
 								<a href="{{route('web.admission')}}" class="btn btn-sm">Click here to fill form</a>
 							</div>
