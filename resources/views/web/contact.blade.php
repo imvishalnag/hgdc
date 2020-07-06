@@ -40,7 +40,7 @@
 								</div>
 								<div class="icon-content">
 									<h4 class="dlab-tilte m-b5">Phone</h4>
-									<p>Phone 01: +91 9854489934 <br/> Phone 02: +91 9957948365</p>
+									<p>Phone 01: +91 9854489934 <br/> Phone 02: +91 9957948365 <br/> Phone 02: +91 9864062616</p>
 								</div>
 							</div>
 						</div>

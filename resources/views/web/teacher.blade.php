@@ -115,7 +115,7 @@
 										<a><img src="{{asset('web/images/techer/com/1.jpg')}}" alt=""></a>
 									</div>
 									<div class="dlab-post-title ">
-										<h5 class="post-title"><a>H. Rajbandshi</a></h5>
+										<h5 class="post-title"><a>H. Rajbanshi</a></h5>
 										<span>M.A., M.Phil</span>
 									</div>
 								</div>
